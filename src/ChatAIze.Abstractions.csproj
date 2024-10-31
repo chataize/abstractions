@@ -1,9 +1,42 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
-    <TargetFramework>net9.0</TargetFramework>
+    <Title>Abstractions</Title>
+    <Product>Abstractions</Product>
+    <Version>0.1.0</Version>
+    <Company>ChatAIze</Company>
+    <Authors>Marcel Kwiatkowski</Authors>
+    <Copyright>© ChatAIze 2024</Copyright>
+    <AssemblyName>ChatAIze.Abstractions</AssemblyName>
+    <RootNamespace>ChatAIze.Abstractions</RootNamespace>
+    <PackageId>ChatAIze.Abstractions</PackageId>
+    <PackageIcon>icon.png</PackageIcon>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageProjectUrl>https://www.chataize.com</PackageProjectUrl>
+    <PackageReleaseNotes>https://github.com/chataize/abstractions/releases</PackageReleaseNotes>
+    <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/chataize/abstractions</RepositoryUrl>
+    <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <Description>
+      Abstract classes, interfaces, and enums shared across ChatAIze projects for better
+      interoperability.
+    </Description>
+    <PackageTags>
+      abstrac, abstraction, abstraction-layer, base, chataize, classes, common, csharp, dotnet,
+      generic, interface, interfaces, interop, interoperability, layer, library, mutual, protocol,
+      shared
+    </PackageTags>
   </PropertyGroup>
-
+  <ItemGroup>
+    <None
+        Include="icon.png"
+        Pack="true"
+        PackagePath="\" />
+    <None
+        Include="../README.md"
+        Pack="true"
+        PackagePath="" />
+  </ItemGroup>
 </Project>
