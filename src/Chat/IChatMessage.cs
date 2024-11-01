@@ -1,4 +1,4 @@
-namespace ChatAIze.Abstractions;
+namespace ChatAIze.Abstractions.Chat;
 
 public interface IChatMessage<TFunctionCall, TFunctionResult> where TFunctionCall : IFunctionCall where TFunctionResult : IFunctionResult
 {
