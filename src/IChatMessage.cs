@@ -1,14 +1,18 @@
 namespace ChatAIze.Abstractions;
 
-public interface IChatMessage
+public interface IChatMessage<TFunctionCall, TFunctionResult> where TFunctionCall : IFunctionCall where TFunctionResult : IFunctionResult
 {
-    public ChatRole Role { get; }
+    public ChatRole Role { get; set; }
 
-    public string? Content { get; }
+    public string? Author { get; set; }
 
-    public ICollection<IFunctionCall> FunctionCalls { get; }
+    public string? Content { get; set; }
 
-    public IFunctionResult? Result { get; }
+    public ICollection<TFunctionCall> FunctionCalls { get; set; }
 
-    public DateTimeOffset CreationTime { get; }
+    public TFunctionResult? FunctionResult { get; set; }
+
+    public PinLocation PinLocation { get; set; }
+
+    public DateTimeOffset CreationTime { get; set; }
 }
