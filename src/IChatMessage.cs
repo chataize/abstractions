@@ -13,6 +13,4 @@ public interface IChatMessage<TFunctionCall, TFunctionResult> where TFunctionCal
     public TFunctionResult? FunctionResult { get; set; }
 
     public PinLocation PinLocation { get; set; }
-
-    public DateTimeOffset CreationTime { get; set; }
 }
