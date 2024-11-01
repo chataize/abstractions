@@ -4,7 +4,7 @@ public interface IChatMessage<TFunctionCall, TFunctionResult> where TFunctionCal
 {
     public ChatRole Role { get; set; }
 
-    public string? Author { get; set; }
+    public string? UserName { get; set; }
 
     public string? Content { get; set; }
 
