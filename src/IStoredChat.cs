@@ -1,6 +1,6 @@
 namespace ChatAIze.Abstractions;
 
-public interface IStoredChat<TMessage, TFunctionCall, TFunctionResult> : IChatConversation<TMessage, TFunctionCall, TFunctionResult> where TMessage : IChatMessage<TFunctionCall, TFunctionResult> where TFunctionCall : IFunctionCall where TFunctionResult : IFunctionResult
+public interface IStoredChat<TMessage, TFunctionCall, TFunctionResult> : IChat<TMessage, TFunctionCall, TFunctionResult> where TMessage : IChatMessage<TFunctionCall, TFunctionResult> where TFunctionCall : IFunctionCall where TFunctionResult : IFunctionResult
 {
     public Guid Id { get; set; }
 

@@ -1,6 +1,6 @@
 ﻿namespace ChatAIze.Abstractions;
 
-public interface IChatConversation<TMessage, TFunctionCall, TFunctionResult> where TMessage : IChatMessage<TFunctionCall, TFunctionResult> where TFunctionCall : IFunctionCall where TFunctionResult : IFunctionResult
+public interface IChat<TMessage, TFunctionCall, TFunctionResult> where TMessage : IChatMessage<TFunctionCall, TFunctionResult> where TFunctionCall : IFunctionCall where TFunctionResult : IFunctionResult
 {
     public string? UserTrackingId { get; set; }
 
