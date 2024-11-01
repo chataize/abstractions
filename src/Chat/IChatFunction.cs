@@ -4,7 +4,7 @@ public interface IChatFunction
 {
     public string Name { get; set; }
 
-    public string Description { get; set; }
+    public string? Description { get; set; }
 
     public ICollection<IFunctionParameter> Parameters { get; set; }
 
