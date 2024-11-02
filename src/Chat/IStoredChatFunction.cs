@@ -10,13 +10,13 @@ public interface IStoredChatFunction : IChatFunction
 
     public bool RequiresConfirmation { get; set; }
 
-    public string ConfirmationTitle { get; set; }
+    public string? ConfirmationTitle { get; set; }
 
-    public string ConfirmationMessage { get; set; }
+    public string? ConfirmationMessage { get; set; }
 
-    public string ConfirmationYesText { get; set; }
+    public string? ConfirmationYesText { get; set; }
 
-    public string ConfirmationNoText { get; set; }
+    public string? ConfirmationNoText { get; set; }
 
     public int PersonalDailyLimit { get; set; }
 
