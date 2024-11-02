@@ -1,6 +1,6 @@
 namespace ChatAIze.Abstractions.Settings;
 
-public interface IChatbotSettings
+public interface IPluginSettings
 {
     public ValueTask<object?> GetAsync(string key);
 

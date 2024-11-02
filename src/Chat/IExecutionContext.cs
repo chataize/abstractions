@@ -4,7 +4,7 @@ namespace ChatAIze.Abstractions.Chat;
 
 public interface IExecutionContext
 {
-    public IChatbotSettings Settings { get; }
+    public IPluginSetting Settings { get; }
 
     public Guid ChatId { get; }
 

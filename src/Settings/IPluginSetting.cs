@@ -1,6 +1,6 @@
 namespace ChatAIze.Abstractions.Settings;
 
-public interface IChatbotSetting
+public interface IPluginSetting
 {
     public string Key { get; }
 
