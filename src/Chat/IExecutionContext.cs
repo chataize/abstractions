@@ -1,7 +1,11 @@
+using ChatAIze.Abstractions.Settings;
+
 namespace ChatAIze.Abstractions.Chat;
 
 public interface IExecutionContext
 {
+    public IChatbotSettings Settings { get; }
+
     public Guid ChatId { get; }
 
     public Guid UserId { get; }
