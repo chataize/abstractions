@@ -2,8 +2,6 @@ namespace ChatAIze.Abstractions.Settings;
 
 public interface IStringSetting : IEditableSetting
 {
-    public string? Value { get; }
-
     public string? DefaultValue { get; }
 
     public string? Placeholder { get; }
