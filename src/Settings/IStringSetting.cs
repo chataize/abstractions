@@ -10,7 +10,7 @@ public interface IStringSetting : IPluginSetting
 
     public int MaxLength { get; }
 
-    public bool IsMultiline { get; }
+    public int EditorLines { get; }
 
     public bool IsSecret { get; }
 }
