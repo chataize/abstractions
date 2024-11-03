@@ -1,6 +1,6 @@
 namespace ChatAIze.Abstractions.Settings;
 
-public interface ISettingGroup : IPluginSetting
+public interface ISettingsGroup : IPluginSetting
 {
     public ICollection<IPluginSetting> Settings { get; }
 }
