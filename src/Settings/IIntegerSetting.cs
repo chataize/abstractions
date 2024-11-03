@@ -1,6 +1,6 @@
 namespace ChatAIze.Abstractions.Settings;
 
-public interface IIntegerSetting : IPluginSetting
+public interface IIntegerSetting : IEditableSetting
 {
     public IntegerSettingStyle Style { get; }
 

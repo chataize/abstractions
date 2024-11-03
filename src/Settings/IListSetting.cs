@@ -1,6 +1,6 @@
 namespace ChatAIze.Abstractions.Settings;
 
-public interface IListSetting : IPluginSetting
+public interface IListSetting : IEditableSetting
 {
     public int MaxItems { get; }
 

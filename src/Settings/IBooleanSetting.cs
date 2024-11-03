@@ -1,6 +1,6 @@
 namespace ChatAIze.Abstractions.Settings;
 
-public interface IBooleanSetting : IPluginSetting
+public interface IBooleanSetting : IEditableSetting
 {
     public BooleanSettingStyle Style { get; }
 

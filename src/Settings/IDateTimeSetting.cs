@@ -1,6 +1,6 @@
 namespace ChatAIze.Abstractions.Settings;
 
-public interface IDateSetting : IPluginSetting
+public interface IDateSetting : IEditableSetting
 {
     public DateTimeSettingStyle Style { get; }
 
