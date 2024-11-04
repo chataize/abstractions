@@ -1,8 +1,8 @@
 namespace ChatAIze.Abstractions.Settings;
 
-public interface ISelectionSetting : IEditableSetting
+public interface ISelectionSetting<T> : IEditableSetting
 {
     public SelectionSettingStyle Style { get; }
 
-    public ICollection<ISelectionChoice> Choices { get; }
+    public ICollection<ISelectionChoice<T>> Choices { get; }
 }
