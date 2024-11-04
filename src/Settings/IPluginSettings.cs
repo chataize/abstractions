@@ -2,7 +2,7 @@ namespace ChatAIze.Abstractions.Settings;
 
 public interface IPluginSettings
 {
-    public ValueTask<object?> GetAsync(string key);
+    public ValueTask<T?> GetAsync<T>(string key);
 
-    public ValueTask SetAsync(string key, object? value);
+    public ValueTask SetAsync<T>(string key, T? value);
 }
