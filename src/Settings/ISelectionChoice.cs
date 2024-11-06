@@ -1,8 +1,8 @@
 namespace ChatAIze.Abstractions.Settings;
 
-public interface ISelectionChoice<T>
+public interface ISelectionChoice
 {
     public string Label { get; }
 
-    public T Value { get; }
+    public string Value { get; }
 }
