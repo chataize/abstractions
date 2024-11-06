@@ -1,4 +1,4 @@
-namespace ChatAIze.Abstractions.Settings;
+namespace ChatAIze.Abstractions.UI;
 
 public enum SelectionSettingStyle
 {
