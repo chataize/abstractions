@@ -1,6 +1,6 @@
 namespace ChatAIze.Abstractions.Settings;
 
-public interface IListSetting : IEditableSetting
+public interface IListSetting : IKeyedSetting
 {
     public string ItemPlaceholder { get; }
 

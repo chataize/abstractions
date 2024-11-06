@@ -1,6 +1,6 @@
 namespace ChatAIze.Abstractions.Settings;
 
-public interface IDecimalSetting : IEditableSetting
+public interface IDecimalSetting : IKeyedSetting
 {
     public double DefaultValue { get; }
 

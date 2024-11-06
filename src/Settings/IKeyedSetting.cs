@@ -1,6 +1,6 @@
 namespace ChatAIze.Abstractions.Settings;
 
-public interface IEditableSetting : IPluginSetting
+public interface IKeyedSetting : IPluginSetting
 {
     public string Key { get; }
 }

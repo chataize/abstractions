@@ -1,6 +1,6 @@
 namespace ChatAIze.Abstractions.Settings;
 
-public interface IDateTimeSetting : IEditableSetting
+public interface IDateTimeSetting : IKeyedSetting
 {
     public DateTimeSettingStyle Style { get; }
 

@@ -1,6 +1,6 @@
 namespace ChatAIze.Abstractions.Settings;
 
-public interface IMapSetting : IEditableSetting
+public interface IMapSetting : IKeyedSetting
 {
     public string KeyPlaceholder { get; }
 

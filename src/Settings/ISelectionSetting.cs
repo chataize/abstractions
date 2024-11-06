@@ -1,6 +1,6 @@
 namespace ChatAIze.Abstractions.Settings;
 
-public interface ISelectionSetting : IEditableSetting
+public interface ISelectionSetting : IKeyedSetting
 {
     public SelectionSettingStyle Style { get; }
 
