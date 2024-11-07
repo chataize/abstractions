@@ -13,7 +13,7 @@ public interface IChatbotPlugin
 
     public string Version { get; }
 
-    public ICollection<IPluginSetting> Settings { get; }
+    public Func<ValueTask<ICollection<IPluginSetting>>> SettingsCallback { get; }
 
-    public ICollection<IChatFunction> Functions { get; }
+    public Func<ValueTask<ICollection<IChatFunction>>> FunctionsCallback { get; }
 }
