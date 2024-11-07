@@ -1,7 +1,11 @@
 namespace ChatAIze.Abstractions.Settings;
 
-public interface IMapSetting : IKeyedSetting
+public interface IMapSetting : IPluginSetting
 {
+    public string? Title { get; }
+
+    public string? Description { get; }
+
     public string? KeyPlaceholder { get; }
 
     public string? ValuePlaceholder { get; }
