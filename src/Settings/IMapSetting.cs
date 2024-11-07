@@ -2,9 +2,9 @@ namespace ChatAIze.Abstractions.Settings;
 
 public interface IMapSetting : IKeyedSetting
 {
-    public string KeyPlaceholder { get; }
+    public string? KeyPlaceholder { get; }
 
-    public string ValuePlaceholder { get; }
+    public string? ValuePlaceholder { get; }
 
     public int MaxItems { get; }
 
