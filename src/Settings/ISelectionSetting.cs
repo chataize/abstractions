@@ -10,7 +10,7 @@ public interface ISelectionSetting : IPluginSetting
 
     public SelectionSettingStyle Style { get; }
 
-    public string DefaultValue { get; }
+    public string? DefaultValue { get; }
 
     public bool IsCompact { get; }
 
