@@ -15,6 +15,10 @@ public interface IChatbotPlugin
 
     public string Version { get; }
 
+    public DateTimeOffset? ReleaseTime { get; }
+
+    public DateTimeOffset? LastUpdateTime { get; }
+
     public Func<ValueTask<ICollection<IPluginSetting>>> SettingsCallback { get; }
 
     public Func<ValueTask<ICollection<IChatFunction>>> FunctionsCallback { get; }
