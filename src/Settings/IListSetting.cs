@@ -11,4 +11,6 @@ public interface IListSetting : IPluginSetting
     public int MaxItems { get; }
 
     public int MaxItemLength { get; }
+
+    public bool IsDisabled { get; }
 }

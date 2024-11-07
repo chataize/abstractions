@@ -11,4 +11,6 @@ public interface IDecimalSetting : IPluginSetting
     public double MinValue { get; }
 
     public double MaxValue { get; }
+
+    public bool IsDisabled { get; }
 }

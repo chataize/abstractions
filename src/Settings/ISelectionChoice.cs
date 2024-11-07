@@ -5,4 +5,6 @@ public interface ISelectionChoice
     public string Label { get; }
 
     public string Value { get; }
+
+    public bool IsDisabled { get; }
 }

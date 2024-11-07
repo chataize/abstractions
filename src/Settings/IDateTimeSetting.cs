@@ -15,4 +15,6 @@ public interface IDateTimeSetting : IPluginSetting
     public DateTimeOffset MinValue { get; }
 
     public DateTimeOffset MaxValue { get; }
+
+    public bool IsDisabled { get; }
 }

@@ -10,5 +10,7 @@ public interface ISettingsButton : IPluginSetting
 
     public ButtonStyle Style { get; }
 
+    public bool IsDisabled { get; }
+
     public Func<ValueTask> Callback { get; }
 }

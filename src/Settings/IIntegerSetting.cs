@@ -21,4 +21,6 @@ public interface IIntegerSetting : IPluginSetting
     public bool ShowSliderValue { get; }
 
     public bool ShowSliderPercentage { get; }
+
+    public bool IsDisabled { get; }
 }

@@ -6,5 +6,7 @@ public interface ISettingsGroup : IPluginSetting
 
     public string? Description { get; }
 
+    public bool IsDisabled { get; }
+
     public ICollection<IPluginSetting> Settings { get; }
 }

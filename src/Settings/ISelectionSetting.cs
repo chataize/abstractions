@@ -12,5 +12,7 @@ public interface ISelectionSetting : IPluginSetting
 
     public string DefaultValue { get; }
 
+    public bool IsDisabled { get; }
+
     public ICollection<ISelectionChoice> Choices { get; }
 }

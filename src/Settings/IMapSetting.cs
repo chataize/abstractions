@@ -15,4 +15,6 @@ public interface IMapSetting : IPluginSetting
     public int MaxKeyLength { get; }
 
     public int MaxValueLength { get; }
+
+    public bool IsDisabled { get; }
 }

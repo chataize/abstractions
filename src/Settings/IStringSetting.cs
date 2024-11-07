@@ -15,4 +15,6 @@ public interface IStringSetting : IPluginSetting
     public int EditorLines { get; }
 
     public bool IsSecure { get; }
+
+    public bool IsDisabled { get; }
 }

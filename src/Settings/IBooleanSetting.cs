@@ -13,4 +13,6 @@ public interface IBooleanSetting : IPluginSetting
     public bool DefaultValue { get; }
 
     public bool IsCompact { get; }
+
+    public bool IsDisabled { get; }
 }
