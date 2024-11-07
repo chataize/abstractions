@@ -11,6 +11,8 @@ public interface IChatbotPlugin
 
     public string? Description { get; }
 
+    public string? Author { get; }
+
     public string Version { get; }
 
     public Func<ValueTask<ICollection<IPluginSetting>>> SettingsCallback { get; }
