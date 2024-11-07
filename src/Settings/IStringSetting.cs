@@ -4,7 +4,7 @@ public interface IStringSetting : IPluginSetting
 {
     public string? Title { get; }
 
-    public string? Caption { get; }
+    public string? Description { get; }
 
     public string? Placeholder { get; }
 
