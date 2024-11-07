@@ -11,4 +11,10 @@ public interface IIntegerSetting : IKeyedSetting
     public int MinValue { get; }
 
     public int MaxValue { get; }
+
+    public int Step { get; }
+
+    public bool ShowSliderValue { get; }
+
+    public bool ShowSliderPercentage { get; }
 }
