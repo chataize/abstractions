@@ -22,5 +22,9 @@ public interface IIntegerSetting : IPluginSetting
 
     public bool ShowSliderPercentage { get; }
 
+    public string? MinValueLabel { get; }
+
+    public string? MaxValueLabel { get; }
+
     public bool IsDisabled { get; }
 }
