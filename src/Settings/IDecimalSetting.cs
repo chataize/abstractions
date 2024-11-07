@@ -12,5 +12,13 @@ public interface IDecimalSetting : IPluginSetting
 
     public double MaxValue { get; }
 
+    public bool ShowSliderValue { get; }
+
+    public bool ShowSliderPercentage { get; }
+
+    public string? MinValueLabel { get; }
+
+    public string? MaxValueLabel { get; }
+
     public bool IsDisabled { get; }
 }
