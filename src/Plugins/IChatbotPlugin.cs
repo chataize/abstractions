@@ -7,7 +7,7 @@ public interface IChatbotPlugin
 {
     public Guid Id { get; }
 
-    public string Name { get; }
+    public string Title { get; }
 
     public string? Description { get; }
 
