@@ -8,5 +8,5 @@ public interface ISettingsSection : IPluginSetting
 
     public bool IsDisabled { get; }
 
-    public ICollection<IPluginSetting> Settings { get; }
+    public ICollection<IPluginSetting>? Settings { get; }
 }

@@ -16,5 +16,5 @@ public interface ISelectionSetting : IPluginSetting
 
     public bool IsDisabled { get; }
 
-    public ICollection<ISelectionChoice> Choices { get; }
+    public ICollection<ISelectionChoice>? Choices { get; }
 }
