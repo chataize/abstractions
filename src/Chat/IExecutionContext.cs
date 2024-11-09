@@ -14,7 +14,7 @@ public interface IExecutionContext
 
     public string? UserEmail { get; }
 
-    public ValueTask<bool> ShowConfirmationAsync(string title, string message, string yesText = "Yes", string noText = "No");
+    public ValueTask<bool> ShowConfirmationAsync(string title, string message, string yesText = "Yes", string noText = "No", CancellationToken cancellationToken = default);
 
-    public ValueTask<bool> VerifyEmailAsync(string email);
+    public ValueTask<bool> VerifyEmailAsync(string email, CancellationToken cancellationToken = default);
 }
