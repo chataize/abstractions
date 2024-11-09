@@ -14,6 +14,8 @@ public interface IExecutionContext
 
     public string? UserEmail { get; }
 
+    public ValueTask<object?> ExecutePluginMethodAsync(string key, CancellationToken cancellationToken = default);
+
     public ValueTask<bool> ShowConfirmationAsync(string title, string message, string yesText = "Yes", string noText = "No", CancellationToken cancellationToken = default);
 
     public ValueTask<bool> VerifyEmailAsync(string email, CancellationToken cancellationToken = default);
