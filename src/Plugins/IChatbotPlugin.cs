@@ -21,7 +21,7 @@ public interface IChatbotPlugin
 
     public DateTimeOffset? LastUpdateTime { get; }
 
-    public IDictionary<string, Func<ValueTask<object?>>> Methods { get; }
+    public IDictionary<string, Func<ValueTask<object?>>> SharedMethods { get; }
 
     public Func<IPluginSettings, CancellationToken, ValueTask<ICollection<IPluginSetting>>>? SettingsCallback { get; }
 
