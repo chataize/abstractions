@@ -1,3 +1,4 @@
+using ChatAIze.Abstractions.Plugins;
 using ChatAIze.Abstractions.Settings;
 
 namespace ChatAIze.Abstractions.Chat;
@@ -13,6 +14,8 @@ public interface IExecutionContext
     public string? UserName { get; }
 
     public string? UserEmail { get; }
+
+    public T GetPlugin<T>() where T : IChatbotPlugin;
 
     public ValueTask<string?> GetUserPropertyAsync(string key, CancellationToken cancellationToken = default);
 
