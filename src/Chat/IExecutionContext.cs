@@ -21,6 +21,4 @@ public interface IExecutionContext
     public ValueTask<bool> ShowConfirmationAsync(string title, string message, string yesText = "Yes", string noText = "No", CancellationToken cancellationToken = default);
 
     public ValueTask<bool> VerifyEmailAsync(string email, CancellationToken cancellationToken = default);
-
-    public ValueTask<object?> InvokeSharedMethodAsync(string name, CancellationToken cancellationToken = default, params object?[] args);
 }
