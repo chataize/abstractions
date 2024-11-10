@@ -1,3 +1,5 @@
+using ChatAIze.Abstractions.UI;
+
 namespace ChatAIze.Abstractions.Settings;
 
 public interface IStringSetting : IPluginSetting
@@ -10,11 +12,11 @@ public interface IStringSetting : IPluginSetting
 
     public string? DefaultValue { get; }
 
+    public TextFieldType TextFieldType { get; }
+
     public int MaxLength { get; }
 
     public int EditorLines { get; }
-
-    public bool IsSecure { get; }
 
     public bool IsDisabled { get; }
 }
