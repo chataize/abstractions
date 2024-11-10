@@ -15,7 +15,7 @@ public interface IExecutionContext
 
     public string? UserEmail { get; }
 
-    public T GetPlugin<T>() where T : IChatbotPlugin;
+    public T GetPlugin<T>(Guid? id = null) where T : IChatbotPlugin;
 
     public ValueTask<string?> GetUserPropertyAsync(string key, CancellationToken cancellationToken = default);
 
