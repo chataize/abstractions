@@ -14,9 +14,9 @@ public interface IExecutionContext
 
     public string? UserEmail { get; }
 
-    public ValueTask<string> GetUserDataAsync(Guid userId, string key, CancellationToken cancellationToken = default);
+    public ValueTask<string> GetUserDataAsync(string key, CancellationToken cancellationToken = default);
 
-    public ValueTask SetUserDataAsync(Guid userId, string key, string value, CancellationToken cancellationToken = default);
+    public ValueTask SetUserDataAsync(string key, string value, CancellationToken cancellationToken = default);
 
     public ValueTask<object?> InvokeSharedMethodAsync(string key, IDictionary<string, object?>? parameters = null, CancellationToken cancellationToken = default);
 
