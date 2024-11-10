@@ -15,7 +15,7 @@ public interface IChatbotPlugin
 
     public string? Author { get; }
 
-    public string Version { get; }
+    public Version Version { get; }
 
     public DateTimeOffset? ReleaseTime { get; }
 
