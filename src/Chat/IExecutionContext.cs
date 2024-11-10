@@ -19,6 +19,8 @@ public interface IExecutionContext
 
     public bool IsDebugModeOn { get; }
 
+    public bool IsCommunicationSandboxed { get; }
+
     public T GetPlugin<T>(Guid? id = null) where T : IChatbotPlugin;
 
     public ValueTask<string?> GetUserPropertyAsync(string key, CancellationToken cancellationToken = default);
