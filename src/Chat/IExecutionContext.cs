@@ -14,9 +14,9 @@ public interface IExecutionContext
 
     public string? UserEmail { get; }
 
-    public ValueTask<string?> GetUserDataAsync(string key, CancellationToken cancellationToken = default);
+    public ValueTask<string?> GetUserPropertyAsync(string key, CancellationToken cancellationToken = default);
 
-    public ValueTask SetUserDataAsync(string key, string value, CancellationToken cancellationToken = default);
+    public ValueTask SetUserPropertyAsync(string key, string value, CancellationToken cancellationToken = default);
 
     public ValueTask<bool> ShowConfirmationAsync(string title, string message, string yesText = "Yes", string noText = "No", CancellationToken cancellationToken = default);
 
