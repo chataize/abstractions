@@ -22,5 +22,5 @@ public interface IExecutionContext
 
     public ValueTask<bool> VerifyEmailAsync(string email, CancellationToken cancellationToken = default);
 
-    public ValueTask<object?> InvokeSharedMethodAsync(string key, CancellationToken cancellationToken = default, params object?[] args);
+    public ValueTask<object?> InvokeSharedMethodAsync(string name, CancellationToken cancellationToken = default, params object?[] args);
 }
