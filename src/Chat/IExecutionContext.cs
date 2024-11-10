@@ -15,6 +15,8 @@ public interface IExecutionContext
 
     public string? UserEmail { get; }
 
+    public string? UserIpAddress { get; }
+
     public bool IsPreview { get; }
 
     public bool IsDebugModeOn { get; }
