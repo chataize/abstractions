@@ -3,7 +3,7 @@ using ChatAIze.Abstractions.Settings;
 
 namespace ChatAIze.Abstractions.Chat;
 
-public interface IExecutionContext
+public interface IFunctionContext
 {
     public IPluginSettings Settings { get; }
 
