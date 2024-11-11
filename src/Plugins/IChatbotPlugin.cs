@@ -1,3 +1,4 @@
+using ChatAIze.Abstractions.Actions;
 using ChatAIze.Abstractions.Chat;
 using ChatAIze.Abstractions.Settings;
 
@@ -25,5 +26,5 @@ public interface IChatbotPlugin
 
     public Func<IPluginSettings, CancellationToken, ValueTask<ICollection<IChatFunction>>>? FunctionsCallback { get; }
 
-    public Func<IPluginSettings, CancellationToken, ValueTask<ICollection<IChatFunction>>>? ActionsCallback { get; }
+    public Func<IPluginSettings, CancellationToken, ValueTask<ICollection<IFunctionAction>>>? ActionsCallback { get; }
 }
