@@ -8,7 +8,7 @@ public interface IFunctionAction
 
     public string Name { get; }
 
-    public ICollection<IPluginSetting> Settings { get; }
+    public ICollection<IPluginSetting>? Settings { get; }
 
-    public Func<IDictionary<string, object>, ValueTask<object>> Callback { get; }
+    public Func<IDictionary<string, object>, ValueTask<object>>? Callback { get; }
 }
