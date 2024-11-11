@@ -6,7 +6,7 @@ public interface IFunctionAction
 {
     public string Key { get; }
 
-    public string Name { get; }
+    public string Title { get; }
 
     public ICollection<IPluginSetting>? Settings { get; }
 
