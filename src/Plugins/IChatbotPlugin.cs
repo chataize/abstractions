@@ -6,7 +6,7 @@ namespace ChatAIze.Abstractions.Plugins;
 
 public interface IChatbotPlugin
 {
-    public Guid Id { get; }
+    public string Id { get; }
 
     public string Title { get; }
 
