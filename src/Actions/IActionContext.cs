@@ -23,7 +23,7 @@ public interface IActionContext
 
     public bool IsCommunicationSandboxed { get; }
 
-    public T? GetPlugin<T>(Guid? id = null) where T : IChatbotPlugin;
+    public T? GetPlugin<T>(string? id = null) where T : IChatbotPlugin;
 
     public ValueTask<string?> GetUserPropertyAsync(string key, CancellationToken cancellationToken = default);
 
