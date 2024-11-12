@@ -1,4 +1,4 @@
-using ChatAIze.Abstractions.Settings;
+using ChatAIze.Abstractions.Actions.Properties;
 
 namespace ChatAIze.Abstractions.Actions;
 
@@ -8,7 +8,7 @@ public interface IFunctionAction
 
     public string Title { get; }
 
-    public ICollection<IPluginSetting>? Settings { get; }
+    public ICollection<IActionProperty>? Properties { get; }
 
-    public Func<IDictionary<string, object>, IActionContext, CancellationToken, ValueTask<object>>? Callback { get; }
+    public Delegate? Callback { get; }
 }
