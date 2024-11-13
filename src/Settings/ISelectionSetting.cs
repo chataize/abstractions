@@ -2,7 +2,7 @@ using ChatAIze.Abstractions.UI;
 
 namespace ChatAIze.Abstractions.Settings;
 
-public interface ISelectionSetting : IPluginSetting
+public interface ISelectionSetting : ISetting
 {
     public string? Title { get; }
 
@@ -16,5 +16,5 @@ public interface ISelectionSetting : IPluginSetting
 
     public bool IsDisabled { get; }
 
-    public ICollection<ISelectionChoice>? Choices { get; }
+    public IReadOnlyCollection<ISelectionChoice>? Choices { get; }
 }

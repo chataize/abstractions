@@ -2,7 +2,7 @@ using ChatAIze.Abstractions.UI;
 
 namespace ChatAIze.Abstractions.Settings;
 
-public interface IDateTimeSetting : IPluginSetting
+public interface IDateTimeSetting : ISetting
 {
     public string? Title { get; }
 

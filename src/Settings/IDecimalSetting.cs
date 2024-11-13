@@ -1,6 +1,6 @@
 namespace ChatAIze.Abstractions.Settings;
 
-public interface IDecimalSetting : IPluginSetting
+public interface IDecimalSetting : ISetting
 {
     public string? Title { get; }
 

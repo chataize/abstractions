@@ -1,6 +1,6 @@
 namespace ChatAIze.Abstractions.Settings;
 
-public interface ISettingsSection : IPluginSetting
+public interface ISettingsSection : ISetting
 {
     public string? Title { get; }
 
@@ -8,5 +8,5 @@ public interface ISettingsSection : IPluginSetting
 
     public bool IsDisabled { get; }
 
-    public ICollection<IPluginSetting>? Settings { get; }
+    public IReadOnlyCollection<ISetting>? Settings { get; }
 }

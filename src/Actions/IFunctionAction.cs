@@ -1,4 +1,4 @@
-using ChatAIze.Abstractions.Actions.Properties;
+using ChatAIze.Abstractions.Settings;
 
 namespace ChatAIze.Abstractions.Actions;
 
@@ -8,7 +8,7 @@ public interface IFunctionAction
 
     public string Title { get; }
 
-    public ICollection<IActionProperty>? Properties { get; }
+    public IReadOnlyCollection<ISetting> Settings { get; }
 
-    public Delegate? Callback { get; }
+    public Delegate Callback { get; }
 }

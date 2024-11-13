@@ -1,6 +1,6 @@
 namespace ChatAIze.Abstractions.Settings;
 
-public interface IMapSetting : IPluginSetting
+public interface IMapSetting : ISetting
 {
     public string? Title { get; }
 
