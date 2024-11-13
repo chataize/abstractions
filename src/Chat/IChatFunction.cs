@@ -10,5 +10,5 @@ public interface IChatFunction
 
     public Delegate? Callback { get; }
 
-    public ICollection<IFunctionParameter>? Parameters { get; }
+    public IReadOnlyCollection<IFunctionParameter>? Parameters { get; }
 }
