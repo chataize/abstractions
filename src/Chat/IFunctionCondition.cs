@@ -10,7 +10,7 @@ public interface IFunctionCondition
 
     public bool IsPrecondition { get; }
 
-    public Func<IConditionContext, CancellationToken, ValueTask<(bool, string?)>> Callback { get; }
+    public Delegate Callback { get; }
 
     public IReadOnlyCollection<ISetting> Settings { get; }
 }
