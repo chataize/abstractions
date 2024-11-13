@@ -24,7 +24,7 @@ public interface IActionContext
 
     public T? GetPlugin<T>(string? id = null) where T : IChatbotPlugin;
 
-    public ValueTask<string?> GetUserPropertyAsync(string id, CancellationToken cancellationToken = default);
+    public ValueTask<T> GetUserPropertyAsync<T>(string id, T defaultValue, CancellationToken cancellationToken = default);
 
-    public ValueTask SetUserPropertyAsync(string id, string value, CancellationToken cancellationToken = default);
+    public ValueTask SetUserPropertyAsync<T>(string id, T? value, CancellationToken cancellationToken = default);
 }
