@@ -1,6 +1,6 @@
 using ChatAIze.Abstractions.Settings;
 
-namespace ChatAIze.Abstractions.Actions;
+namespace ChatAIze.Abstractions.Chat;
 
 public interface IFunctionAction
 {
