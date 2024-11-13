@@ -26,4 +26,6 @@ public interface IChatbotPlugin
     public Func<IPluginSettings, CancellationToken, ValueTask<IReadOnlyCollection<IChatFunction>>>? FunctionsCallback { get; }
 
     public Func<IPluginSettings, CancellationToken, ValueTask<IReadOnlyCollection<IFunctionAction>>>? ActionsCallback { get; }
+
+    public Func<IPluginSettings, CancellationToken, ValueTask<IReadOnlyCollection<IFunctionCondition>>>? ConditionsCallback { get; }
 }
