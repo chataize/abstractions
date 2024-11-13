@@ -8,5 +8,5 @@ public interface ISettingsSection : ISetting
 
     public bool IsDisabled { get; }
 
-    public IReadOnlyCollection<ISetting>? Settings { get; }
+    public IReadOnlyCollection<ISetting> Settings { get; }
 }

@@ -16,5 +16,5 @@ public interface ISelectionSetting : ISetting
 
     public bool IsDisabled { get; }
 
-    public IReadOnlyCollection<ISelectionChoice>? Choices { get; }
+    public IReadOnlyCollection<ISelectionChoice> Choices { get; }
 }
