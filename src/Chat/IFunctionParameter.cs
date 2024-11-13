@@ -10,5 +10,5 @@ public interface IFunctionParameter
 
     public bool IsRequired { get; }
 
-    public ICollection<string> EnumValues { get; }
+    public IReadOnlyCollection<string> EnumValues { get; }
 }
