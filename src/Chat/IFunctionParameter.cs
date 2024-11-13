@@ -8,7 +8,7 @@ public interface IFunctionParameter
 
     public Type Type { get; set; }
 
-    public ICollection<string> EnumValues { get; set; }
-
     public bool IsRequired { get; set; }
+
+    public ICollection<string> EnumValues { get; set; }
 }
