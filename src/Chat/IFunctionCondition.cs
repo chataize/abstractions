@@ -10,5 +10,5 @@ public interface IFunctionCondition
 
     public IReadOnlyCollection<ISetting> Settings { get; }
 
-    public Func<IConditionContext, CancellationToken, ValueTask<bool>> Callback { get; }
+    public Func<IConditionContext, CancellationToken, ValueTask<(bool, string?)>> Callback { get; }
 }
