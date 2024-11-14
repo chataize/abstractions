@@ -2,7 +2,7 @@ using ChatAIze.Abstractions.Settings;
 
 namespace ChatAIze.Abstractions.Chat;
 
-public interface IFunctionCondition
+public interface IFunctionCondition : ISettingsContainer
 {
     public string Id { get; }
 
@@ -11,6 +11,4 @@ public interface IFunctionCondition
     public bool IsPrecondition { get; }
 
     public Delegate Callback { get; }
-
-    public IReadOnlyCollection<ISetting> Settings { get; }
 }
