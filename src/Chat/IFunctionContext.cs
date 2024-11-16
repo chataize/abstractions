@@ -6,7 +6,7 @@ public interface IFunctionContext : IConditionContext
 {
     public void SetStatus(string? status, double? progress = null);
 
-    public void SetQuickReplies(params IReadOnlyCollection<IQuickReply> quickReplies);
+    public void SetQuickReplies(params IReadOnlyCollection<IQuickReply>? quickReplies);
 
     public ValueTask<bool> VerifyEmailAsync(string email, CancellationToken cancellationToken = default);
 
