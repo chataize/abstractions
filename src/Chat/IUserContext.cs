@@ -10,6 +10,10 @@ public interface IUserContext
 
     public string? IpAddress { get; }
 
+    public string? Country { get; }
+
+    public string? City { get; }
+
     public TranslationLanguage Language { get; }
 
     public TimeSpan TimeZoneOffset { get; }
