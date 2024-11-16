@@ -8,6 +8,8 @@ public interface IActionContext : IConditionContext
 
     public void SetStatus(string? status);
 
+    public void SetPlaceholder(string id, object? value);
+
     public void SetQuickReplies(params IReadOnlyCollection<IQuickReply> quickReplies);
 
     public ValueTask<bool> VerifyEmailAsync(string email, CancellationToken cancellationToken = default);
