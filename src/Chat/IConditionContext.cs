@@ -8,17 +8,7 @@ public interface IConditionContext
 
     public Guid ChatId { get; }
 
-    public Guid UserId { get; }
-
-    public string? UserName { get; }
-
-    public string? UserEmail { get; }
-
-    public string? UserIpAddress { get; }
-
-    public TranslationLanguage UserLanguage { get; }
-
-    public TimeSpan UserTimeZoneOffset { get; }
+    public IUserContext User { get; }
 
     public bool IsPreview { get; }
 
