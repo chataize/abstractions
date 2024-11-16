@@ -8,7 +8,7 @@ public interface IFunctionAction : ISettingsContainer
 
     public string Title { get; }
 
-    public IReadOnlyCollection<string> Placeholders { get; }
-
     public Delegate Callback { get; }
+
+    public IReadOnlyCollection<string> Placeholders { get; }
 }
