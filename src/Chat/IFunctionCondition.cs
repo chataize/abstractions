@@ -10,6 +10,8 @@ public interface IFunctionCondition : ISettingsContainer
 
     public string? Description { get; }
 
+    public string? IconUrl { get; }
+
     public bool IsPrecondition { get; }
 
     public Delegate Callback { get; }
