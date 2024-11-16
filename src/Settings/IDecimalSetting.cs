@@ -1,6 +1,6 @@
 namespace ChatAIze.Abstractions.Settings;
 
-public interface IDecimalSetting : ISetting
+public interface IDecimalSetting : ISetting, IDefaultValueObject
 {
     public string? Title { get; }
 

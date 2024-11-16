@@ -2,7 +2,7 @@ using ChatAIze.Abstractions.UI;
 
 namespace ChatAIze.Abstractions.Settings;
 
-public interface IStringSetting : ISetting
+public interface IStringSetting : ISetting, IDefaultValueObject
 {
     public string? Title { get; }
 
