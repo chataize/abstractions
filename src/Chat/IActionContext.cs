@@ -4,6 +4,8 @@ namespace ChatAIze.Abstractions.Chat;
 
 public interface IActionContext : IConditionContext
 {
+    public void SetStatus(string? status);
+
     public void SetQuickReplies(params IReadOnlyCollection<IQuickReply> quickReplies);
 
     public ValueTask<bool> VerifyEmailAsync(string email, CancellationToken cancellationToken = default);
