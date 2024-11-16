@@ -4,6 +4,8 @@ namespace ChatAIze.Abstractions.Chat;
 
 public interface IActionContext : IConditionContext
 {
+    public IReadOnlyCollection<IActionResult> Results { get; }
+
     public void SetStatus(string? status);
 
     public void SetQuickReplies(params IReadOnlyCollection<IQuickReply> quickReplies);
