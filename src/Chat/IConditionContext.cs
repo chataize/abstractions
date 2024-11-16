@@ -16,6 +16,8 @@ public interface IConditionContext
 
     public string? UserIpAddress { get; }
 
+    public TranslationLanguage UserLanguage { get; }
+
     public bool IsPreview { get; }
 
     public bool IsDebugModeOn { get; }
