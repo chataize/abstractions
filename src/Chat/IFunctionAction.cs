@@ -10,6 +10,8 @@ public interface IFunctionAction : ISettingsContainer
 
     public string? Description { get; }
 
+    public string? IconUrl { get; }
+
     public Delegate Callback { get; }
 
     public IReadOnlyCollection<string> Placeholders { get; }
