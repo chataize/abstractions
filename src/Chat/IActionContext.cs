@@ -12,6 +12,8 @@ public interface IActionContext : IConditionContext
 
     public void SetQuickReplies(params IReadOnlyCollection<IQuickReply> quickReplies);
 
+    public void SetSuccess(bool isSuccess);
+
     public ValueTask<bool> VerifyEmailAsync(string email, CancellationToken cancellationToken = default);
 
     public ValueTask<bool> ShowCaptchaAsync(CancellationToken cancellationToken = default);
