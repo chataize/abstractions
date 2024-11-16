@@ -11,6 +11,8 @@ public interface IChatbotPlugin
 
     public string? Description { get; }
 
+    public string? IconUrl { get; }
+
     public string? Website { get; }
 
     public string? Author { get; }
