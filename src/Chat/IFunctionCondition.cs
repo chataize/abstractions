@@ -8,6 +8,8 @@ public interface IFunctionCondition : ISettingsContainer
 
     public string Title { get; }
 
+    public string? Description { get; }
+
     public bool IsPrecondition { get; }
 
     public Delegate Callback { get; }
