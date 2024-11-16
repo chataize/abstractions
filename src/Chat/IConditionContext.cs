@@ -18,6 +18,8 @@ public interface IConditionContext
 
     public TranslationLanguage UserLanguage { get; }
 
+    public TimeSpan UserTimeZoneOffset { get; }
+
     public bool IsPreview { get; }
 
     public bool IsDebugModeOn { get; }
