@@ -4,7 +4,7 @@ namespace ChatAIze.Abstractions.Chat;
 
 public interface IFunctionContext : IConditionContext
 {
-    public void SetStatus(string? status);
+    public void SetStatus(string? status, double? progress = null);
 
     public void SetQuickReplies(params IReadOnlyCollection<IQuickReply> quickReplies);
 
