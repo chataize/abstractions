@@ -6,5 +6,7 @@ public interface IActionContext : IFunctionContext
 
     public void SetPlaceholder(string id, object value);
 
-    public void SetSuccess(bool isSuccess);
+    public void SetActionResult(bool isSuccess, object? value = null);
+
+    public void SetFunctionResult(bool isSuccess, object? value = null);
 }
