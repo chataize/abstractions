@@ -12,6 +12,8 @@ public interface IActionContext : IFunctionContext
 
     public void SetPlaceholder(string id, object value);
 
+    public void SetPlaceholder(string id, JsonElement value);
+
     public void SetActionResult(bool isSuccess, object? value = null);
 
     public void SetFunctionResult(bool isSuccess, object? value = null);
