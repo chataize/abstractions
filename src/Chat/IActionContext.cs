@@ -6,6 +6,8 @@ public interface IActionContext : IFunctionContext
 
     public IReadOnlyList<IActionResult> Results { get; }
 
+    public IReadOnlyDictionary<string, object> Placeholders { get; }
+
     public void SetPlaceholder(string id, object value);
 
     public void SetActionResult(bool isSuccess, object? value = null);
