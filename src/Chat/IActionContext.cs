@@ -4,6 +4,8 @@ public interface IActionContext : IFunctionContext
 {
     public IReadOnlyList<IFunctionAction> Actions { get; }
 
+    public IReadOnlyList<IActionResult> Results { get; }
+
     public void SetPlaceholder(string id, object value);
 
     public void SetActionResult(bool isSuccess, object? value = null);
