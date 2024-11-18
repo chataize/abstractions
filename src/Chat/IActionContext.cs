@@ -2,7 +2,7 @@ namespace ChatAIze.Abstractions.Chat;
 
 public interface IActionContext : IFunctionContext
 {
-    public IReadOnlyCollection<IActionResult> Results { get; }
+    public IReadOnlyList<IFunctionAction> Actions { get; }
 
     public void SetPlaceholder(string id, object value);
 
