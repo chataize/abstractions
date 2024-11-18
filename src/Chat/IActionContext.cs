@@ -9,4 +9,6 @@ public interface IActionContext : IFunctionContext
     public void SetActionResult(bool isSuccess, object? value = null);
 
     public void SetFunctionResult(bool isSuccess, object? value = null);
+
+    public void StopExecution();
 }
