@@ -12,5 +12,7 @@ public interface IActionContext : IFunctionContext
 
     public void SetFunctionResult(bool isSuccess, object? value = null);
 
+    public void SetNextAction(int index);
+
     public void StopExecution();
 }
