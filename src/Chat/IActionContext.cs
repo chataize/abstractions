@@ -1,3 +1,5 @@
+using System.Text.Json;
+
 namespace ChatAIze.Abstractions.Chat;
 
 public interface IActionContext : IFunctionContext
@@ -6,7 +8,7 @@ public interface IActionContext : IFunctionContext
 
     public IReadOnlyList<IActionResult> Results { get; }
 
-    public IReadOnlyDictionary<string, object> Placeholders { get; }
+    public IReadOnlyDictionary<string, JsonElement> Placeholders { get; }
 
     public void SetPlaceholder(string id, object value);
 
