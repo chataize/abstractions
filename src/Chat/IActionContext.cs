@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using System.Text.Json;
 
 namespace ChatAIze.Abstractions.Chat;
@@ -12,6 +13,7 @@ public interface IActionContext : IFunctionContext
 
     public void SetPlaceholder(string id, object value);
 
+    [OverloadResolutionPriority(1)]
     public void SetPlaceholder(string id, JsonElement value);
 
     public void SetActionResult(bool isSuccess, object? value = null);
