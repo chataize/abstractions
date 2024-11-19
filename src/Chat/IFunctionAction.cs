@@ -12,6 +12,8 @@ public interface IFunctionAction : ISettingsContainer
 
     public string? IconUrl { get; }
 
+    public bool RunsSilently { get; }
+
     public Delegate Callback { get; }
 
     public IReadOnlyCollection<string> Placeholders { get; }
