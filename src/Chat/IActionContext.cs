@@ -11,6 +11,11 @@ public interface IActionContext : IFunctionContext
 
     public IReadOnlyDictionary<string, JsonElement> Placeholders { get; }
 
+    public void AddPlaceholder(string id, object value);
+
+    [OverloadResolutionPriority(1)]
+    public void AddPlaceholder(string id, JsonElement value);
+
     public void SetPlaceholder(string id, object value);
 
     [OverloadResolutionPriority(1)]
