@@ -4,13 +4,13 @@ namespace ChatAIze.Abstractions.Chat;
 
 public interface IFunctionContext : IConditionContext
 {
-    public void SetSystemMessage(string prompt);
+    public string SystemMessage { get; set; }
+
+    public ICollection<IQuickReply> QuickReplies { get; set; }
 
     public void SetLanguageModel(IntelligenceProvider provider, string model);
 
     public void SetStatus(string? status, double? progress = null);
-
-    public void SetQuickReplies(params IReadOnlyCollection<IQuickReply>? quickReplies);
 
     public ValueTask<bool> VerifyEmailAsync(string email, CancellationToken cancellationToken = default);
 
