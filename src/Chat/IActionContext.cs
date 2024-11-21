@@ -14,10 +14,6 @@ public interface IActionContext : IFunctionContext
 
     public IFunctionAction CurrentAction { get; }
 
-    public void AddPlaceholder(string id, object value);
-
-    public void AddPlaceholder(string id, JsonElement value);
-
     public void SetPlaceholder(string id, object value);
 
     public void SetPlaceholder(string id, JsonElement value);
