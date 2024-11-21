@@ -12,6 +12,8 @@ public interface IFunctionContext : IConditionContext
 
     public ValueTask<bool> ShowCaptchaAsync(CancellationToken cancellationToken = default);
 
+    public ValueTask ShowFeedbackAsync(CancellationToken cancellationToken = default);
+
     public ValueTask<bool> ShowConfirmationAsync(string title, string message, string yesText = "Yes", string noText = "No", CancellationToken cancellationToken = default);
 
     public ValueTask<(bool, IDictionary<string, object>)> ShowFormAsync(string title, string confirmText = "Confirm", string cancelText = "Cancel", CancellationToken cancellationToken = default, params IReadOnlyCollection<ISetting> settings);
