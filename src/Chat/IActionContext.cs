@@ -4,15 +4,15 @@ namespace ChatAIze.Abstractions.Chat;
 
 public interface IActionContext : IFunctionContext
 {
+    public IChatFunction CurrentFunction { get; }
+
+    public IFunctionAction CurrentAction { get; }
+
     public IReadOnlyList<IFunctionAction> Actions { get; }
 
     public IReadOnlyList<IActionResult> Results { get; }
 
     public IReadOnlyDictionary<string, JsonElement> Placeholders { get; }
-
-    public IChatFunction CurrentFunction { get; }
-
-    public IFunctionAction CurrentAction { get; }
 
     public void SetPlaceholder(string id, object value);
 
