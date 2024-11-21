@@ -12,7 +12,7 @@ public interface IActionContext : IFunctionContext
 
     public int CurrentActionIndex { get; }
 
-    public int NextActionIndex { get; }
+    public int NextActionIndex { get; set; }
 
     public IReadOnlyList<IFunctionAction> Actions { get; }
 
@@ -27,8 +27,6 @@ public interface IActionContext : IFunctionContext
     public void SetActionResult(bool isSuccess, object? value = null);
 
     public void SetFunctionResult(bool isSuccess, object? value = null);
-
-    public void SetNextAction(int index);
 
     public void StopExecution();
 }
