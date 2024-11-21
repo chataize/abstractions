@@ -4,15 +4,15 @@ namespace ChatAIze.Abstractions.Chat;
 
 public interface IActionContext : IFunctionContext
 {
+    public IChatFunction CurrentFunction { get; }
+
+    public IFunctionAction CurrentAction { get; }
+
     public int PreviousActionIndex { get; }
 
     public int CurrentActionIndex { get; }
 
     public int NextActionIndex { get; }
-
-    public IChatFunction CurrentFunction { get; }
-
-    public IFunctionAction CurrentAction { get; }
 
     public IReadOnlyList<IFunctionAction> Actions { get; }
 
