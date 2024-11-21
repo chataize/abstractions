@@ -1,8 +1,9 @@
+using System.Text.Json;
 using ChatAIze.Abstractions.Settings;
 
 namespace ChatAIze.Abstractions.Chat;
 
-public interface IFunctionAction : ISettingsContainer
+public interface IFunctionAction
 {
     public string Id { get; }
 
@@ -16,5 +17,7 @@ public interface IFunctionAction : ISettingsContainer
 
     public Delegate Callback { get; }
 
-    public IReadOnlyCollection<string> Placeholders { get; }
+    public Func<IReadOnlyDictionary<string, JsonElement>, ValueTask<IReadOnlyCollection<ISetting>>> SettingsCallback { get; }
+
+    public Func<IReadOnlyDictionary<string, JsonElement>, ValueTask<IReadOnlyCollection<string>>> PlaceholdersCallback { get; }
 }
