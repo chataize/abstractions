@@ -13,12 +13,10 @@ public interface IActionContext : IFunctionContext
 
     public void AddPlaceholder(string id, object value);
 
-    [OverloadResolutionPriority(1)]
     public void AddPlaceholder(string id, JsonElement value);
 
     public void SetPlaceholder(string id, object value);
 
-    [OverloadResolutionPriority(1)]
     public void SetPlaceholder(string id, JsonElement value);
 
     public void SetActionResult(bool isSuccess, object? value = null);
