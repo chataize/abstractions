@@ -4,6 +4,8 @@ namespace ChatAIze.Abstractions.Chat;
 
 public interface IFunctionContext : IConditionContext
 {
+    public void SetLanguageModel(IntelligenceProvider provider, string model);
+
     public void SetStatus(string? status, double? progress = null);
 
     public void SetQuickReplies(params IReadOnlyCollection<IQuickReply>? quickReplies);
