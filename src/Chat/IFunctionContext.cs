@@ -1,3 +1,4 @@
+using ChatAIze.Abstractions.Retrieval;
 using ChatAIze.Abstractions.Settings;
 
 namespace ChatAIze.Abstractions.Chat;
@@ -7,6 +8,8 @@ public interface IFunctionContext : IConditionContext
     public string SystemMessage { get; set; }
 
     public ICollection<IQuickReply> QuickReplies { get; set; }
+
+    public ValueTask<IRetrievalResult> SearchKnowledgeAsync(string query, ICollection<string>? keywords = null, CancellationToken cancellationToken = default);
 
     public void SetLanguageModel(IntelligenceProvider provider, string model);
 
