@@ -17,7 +17,7 @@ public interface IFunctionAction
 
     public Delegate Callback { get; }
 
-    public Func<IReadOnlyDictionary<string, JsonElement>, ValueTask<IReadOnlyCollection<ISetting>>> SettingsCallback { get; }
+    public Func<IReadOnlyDictionary<string, JsonElement>, IReadOnlyCollection<ISetting>> SettingsCallback { get; }
 
-    public Func<IReadOnlyDictionary<string, JsonElement>, ValueTask<IReadOnlyCollection<string>>> PlaceholdersCallback { get; }
+    public Func<IReadOnlyDictionary<string, JsonElement>, IReadOnlyCollection<string>> PlaceholdersCallback { get; }
 }

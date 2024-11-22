@@ -23,11 +23,11 @@ public interface IChatbotPlugin
 
     public DateTimeOffset? LastUpdateTime { get; }
 
-    public Func<IPluginSettings, CancellationToken, ValueTask<IReadOnlyCollection<ISetting>>>? SettingsCallback { get; }
+    public Func<IPluginSettings, CancellationToken, IReadOnlyCollection<ISetting>> SettingsCallback { get; }
 
-    public Func<IPluginSettings, CancellationToken, ValueTask<IReadOnlyCollection<IChatFunction>>>? FunctionsCallback { get; }
+    public Func<IPluginSettings, CancellationToken, IReadOnlyCollection<IChatFunction>> FunctionsCallback { get; }
 
-    public Func<IPluginSettings, CancellationToken, ValueTask<IReadOnlyCollection<IFunctionAction>>>? ActionsCallback { get; }
+    public Func<IPluginSettings, CancellationToken, IReadOnlyCollection<IFunctionAction>> ActionsCallback { get; }
 
-    public Func<IPluginSettings, CancellationToken, ValueTask<IReadOnlyCollection<IFunctionCondition>>>? ConditionsCallback { get; }
+    public Func<IPluginSettings, CancellationToken, IReadOnlyCollection<IFunctionCondition>> ConditionsCallback { get; }
 }
