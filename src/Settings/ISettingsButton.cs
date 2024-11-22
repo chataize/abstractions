@@ -12,5 +12,5 @@ public interface ISettingsButton : ISetting
 
     public bool IsDisabled { get; }
 
-    public Func<CancellationToken, ValueTask>? Callback { get; }
+    public Func<CancellationToken, ValueTask> Callback { get; }
 }
