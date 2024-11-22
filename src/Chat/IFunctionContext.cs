@@ -11,6 +11,10 @@ public interface IFunctionContext : IConditionContext
 
     public ValueTask<IRetrievalResult> SearchKnowledgeAsync(string query, ICollection<string>? keywords = null, CancellationToken cancellationToken = default);
 
+    public ValueTask<string?> GetDocumentContentAsync(Guid id, CancellationToken cancellationToken = default);
+
+    public ValueTask<string?> GetDocumentContentAsync(string title, CancellationToken cancellationToken = default);
+
     public void SetLanguageModel(IntelligenceProvider provider, string model);
 
     public void SetStatus(string? status, double? progress = null);
