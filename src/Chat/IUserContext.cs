@@ -21,4 +21,6 @@ public interface IUserContext
     public TimeSpan TimeZoneOffset { get; }
 
     public ValueTask<T> GetPropertyAsync<T>(string id, T defaultValue, CancellationToken cancellationToken = default);
+
+    public ValueTask SetPropertyAsync<T>(string id, T? value, CancellationToken cancellationToken = default);
 }
