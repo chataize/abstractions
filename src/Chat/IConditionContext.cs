@@ -17,6 +17,4 @@ public interface IConditionContext
     public bool IsCommunicationSandboxed { get; }
 
     public T? GetPlugin<T>(string? id = null) where T : IChatbotPlugin;
-
-    public ValueTask<T> GetUserPropertyAsync<T>(string id, T defaultValue, CancellationToken cancellationToken = default);
 }
