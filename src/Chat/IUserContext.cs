@@ -16,6 +16,8 @@ public interface IUserContext
 
     public TranslationLanguage Language { get; }
 
+    public SecurityRole Role { get; }
+
     public TimeSpan TimeZoneOffset { get; }
 
     public ValueTask<T> GetPropertyAsync<T>(string id, T defaultValue, CancellationToken cancellationToken = default);
