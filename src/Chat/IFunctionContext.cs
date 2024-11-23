@@ -9,7 +9,7 @@ public interface IFunctionContext : IConditionContext
 
     public ICollection<IQuickReply> QuickReplies { get; set; }
 
-    public ValueTask<IRetrievalResult> SearchKnowledgeAsync(string query, IReadOnlyCollection<string>? keywords = null, CancellationToken cancellationToken = default);
+    public ValueTask<IRetrievalResult> SearchKnowledgeAsync(string query, IReadOnlyCollection<string>? keywords = null, IReadOnlyCollection<Guid>? ignoredChunkIds = null, CancellationToken cancellationToken = default);
 
     public ValueTask<string?> GetDocumentContentAsync(Guid id, CancellationToken cancellationToken = default);
 
