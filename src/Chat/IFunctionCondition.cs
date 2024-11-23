@@ -1,8 +1,9 @@
+using System.Text.Json;
 using ChatAIze.Abstractions.Settings;
 
 namespace ChatAIze.Abstractions.Chat;
 
-public interface IFunctionCondition : ISettingsContainer
+public interface IFunctionCondition
 {
     public string Id { get; }
 
@@ -15,4 +16,6 @@ public interface IFunctionCondition : ISettingsContainer
     public bool IsPrecondition { get; }
 
     public Delegate Callback { get; }
+
+    public Func<IReadOnlyDictionary<string, JsonElement>, IReadOnlyCollection<ISetting>> SettingsCallback { get; }
 }
