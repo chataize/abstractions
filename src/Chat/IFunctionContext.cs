@@ -1,3 +1,4 @@
+using System.Text.Json;
 using ChatAIze.Abstractions.Retrieval;
 using ChatAIze.Abstractions.Settings;
 
@@ -27,5 +28,5 @@ public interface IFunctionContext : IConditionContext
 
     public ValueTask<bool> ShowConfirmationAsync(string title, string message, string yesText = "Yes", string noText = "No", CancellationToken cancellationToken = default);
 
-    public ValueTask<(bool, IDictionary<string, object>)> ShowFormAsync(string title, string confirmText = "Confirm", string cancelText = "Cancel", CancellationToken cancellationToken = default, params IReadOnlyCollection<ISetting> settings);
+    public ValueTask<(bool, IDictionary<string, JsonElement>)> ShowFormAsync(string title, string confirmText = "Confirm", string cancelText = "Cancel", CancellationToken cancellationToken = default, params IReadOnlyCollection<ISetting> settings);
 }
