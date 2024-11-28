@@ -14,6 +14,8 @@ public interface IActionContext : IFunctionContext
 
     public int NextActionIndex { get; set; }
 
+    public string? Status { get; set; }
+
     public IReadOnlyList<IFunctionAction> Actions { get; }
 
     public IReadOnlyList<IActionResult> Results { get; }
