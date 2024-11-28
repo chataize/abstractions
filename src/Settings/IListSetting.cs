@@ -12,5 +12,7 @@ public interface IListSetting : ISetting, IDefaultValueObject
 
     public int MaxItemLength { get; }
 
+    public bool AllowDuplicates { get; }
+
     public bool IsDisabled { get; }
 }
