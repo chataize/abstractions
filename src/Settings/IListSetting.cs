@@ -1,3 +1,5 @@
+using ChatAIze.Abstractions.UI;
+
 namespace ChatAIze.Abstractions.Settings;
 
 public interface IListSetting : ISetting, IDefaultValueObject
@@ -7,6 +9,8 @@ public interface IListSetting : ISetting, IDefaultValueObject
     public string? Description { get; }
 
     public string? ItemPlaceholder { get; }
+
+    public TextFieldType TextFieldType { get; }
 
     public int MaxItems { get; }
 
