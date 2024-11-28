@@ -18,5 +18,7 @@ public interface IStringSetting : ISetting, IDefaultValueObject
 
     public int EditorLines { get; }
 
+    public bool IsLowerCase { get; }
+
     public bool IsDisabled { get; }
 }
