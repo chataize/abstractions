@@ -18,7 +18,7 @@ public interface IListSetting : ISetting, IDefaultValueObject
 
     public bool AllowDuplicates { get; }
 
-    public bool IsLowerCase { get; }
+    public bool IsLowercase { get; }
 
     public bool IsDisabled { get; }
 }
