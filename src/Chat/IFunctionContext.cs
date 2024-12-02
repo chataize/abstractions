@@ -6,7 +6,7 @@ namespace ChatAIze.Abstractions.Chat;
 
 public interface IFunctionContext : IConditionContext
 {
-    public string SystemMessage { get; set; }
+    public string Prompt { get; set; }
 
     public ICollection<IQuickReply> QuickReplies { get; set; }
 
