@@ -8,5 +8,7 @@ public interface IRetrievalItem
 
     public string? Content { get; }
 
+    public string? Folder { get; }
+
     public string? SourceUrl { get; }
 }
