@@ -1,4 +1,4 @@
-namespace ChatAIze.Abstractions.Databases;
+namespace ChatAIze.Abstractions.Databases.Enums;
 
 public enum ItemAdditionResult
 {

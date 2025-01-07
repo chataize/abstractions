@@ -1,4 +1,4 @@
-namespace ChatAIze.Abstractions.Databases;
+namespace ChatAIze.Abstractions.Databases.Enums;
 
 [Flags]
 public enum FilterOptions
