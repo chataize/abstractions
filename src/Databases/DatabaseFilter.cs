@@ -6,7 +6,7 @@ public interface IDatabaseFilter
 
     public FilterType Type { get; }
 
-    public string Value { get; }
+    public string? Value { get; }
 
     public FilterOptions Options { get; }
 }
