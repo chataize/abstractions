@@ -1,3 +1,4 @@
+using ChatAIze.Abstractions.Databases;
 using ChatAIze.Abstractions.Plugins;
 
 namespace ChatAIze.Abstractions.Chat;
@@ -9,6 +10,8 @@ public interface IConditionContext
     public Guid ChatId { get; }
 
     public IUserContext User { get; }
+
+    public IDatabaseManager Databases { get; }
 
     public bool IsPreview { get; }
 
