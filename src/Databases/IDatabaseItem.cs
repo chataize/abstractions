@@ -8,7 +8,7 @@ public interface IDatabaseItem
 
     public string? Description { get; }
 
-    public IReadOnlyDictionary<string, string> Properties { get; }
+    public IReadOnlyDictionary<string, string?> Properties { get; }
 
     public DateTimeOffset CreationTime { get; }
 
