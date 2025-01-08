@@ -4,7 +4,7 @@ public interface IDatabaseManager
 {
     #region Databases
 
-    public Task<DatabaseCreationResult> CreateDatabaseAsync(string title, string? description = null);
+    public Task CreateDatabaseAsync(string title, string? description = null);
 
     public Task<IReadOnlyList<IDatabase>> GetAllDatabasesAsync();
 
@@ -22,7 +22,7 @@ public interface IDatabaseManager
 
     #region Items
 
-    public Task<ItemAdditionResult> AddAsync(IDatabase database, IDatabaseItem item);
+    public Task AddAsync(IDatabase database, IDatabaseItem item);
 
     public Task<IReadOnlyList<IDatabaseItem>> FindItemsAsync(IDatabase database, string? search = null, int count = 10, IDatabaseSorting? sorting = null, params IEnumerable<IDatabaseFilter> filters);
 

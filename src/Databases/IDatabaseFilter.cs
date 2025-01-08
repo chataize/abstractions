@@ -1,3 +1,5 @@
+using ChatAIze.Abstractions.Databases.Enums;
+
 namespace ChatAIze.Abstractions.Databases;
 
 public interface IDatabaseFilter
