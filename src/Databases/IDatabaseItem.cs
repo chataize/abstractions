@@ -4,6 +4,10 @@ public interface IDatabaseItem
 {
     public Guid Id { get; }
 
+    public Guid DatabaseId { get; }
+
+    public IDatabase Database { get; }
+
     public string Title { get; }
 
     public string? Description { get; }
