@@ -14,7 +14,11 @@ public interface IDatabaseItem
 
     public IReadOnlyDictionary<string, string?> Properties { get; }
 
+    public bool IsDeleted { get; }
+
     public DateTimeOffset CreationTime { get; }
 
     public DateTimeOffset LastUpdateTime { get; }
+
+    public DateTimeOffset? DeletionTime { get; }
 }

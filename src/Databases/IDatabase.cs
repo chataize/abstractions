@@ -8,7 +8,11 @@ public interface IDatabase
 
     public string? Description { get; }
 
+    public bool IsDeleted { get; }
+
     public DateTimeOffset CreationTime { get; }
 
     public DateTimeOffset LastUpdateTime { get; }
+
+    public DateTimeOffset? DeletionTime { get; }
 }
