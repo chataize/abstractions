@@ -38,13 +38,13 @@ public interface IDatabaseManager
 
     public Task SetDescriptionAsync(IDatabaseItem item, string? description, CancellationToken cancellationToken = default);
 
-    public Task AddPropertyAsync(IDatabaseItem item, string key, string? value, CancellationToken cancellationToken = default);
+    public Task AddPropertyAsync(IDatabaseItem item, string title, string? value, CancellationToken cancellationToken = default);
 
-    public Task SetPropertyAsync(IDatabaseItem item, string key, string? value, CancellationToken cancellationToken = default);
+    public Task SetPropertyAsync(IDatabaseItem item, string title, string? value, CancellationToken cancellationToken = default);
 
     public Task SetPropertiesAsync(IDatabaseItem item, IEnumerable<KeyValuePair<string, string?>> properties, CancellationToken cancellationToken = default);
 
-    public Task RemovePropertyAsync(IDatabaseItem item, string key, CancellationToken cancellationToken = default);
+    public Task RemovePropertyAsync(IDatabaseItem item, string title, CancellationToken cancellationToken = default);
 
     public Task DeleteAsync(IDatabaseItem item, CancellationToken cancellationToken = default);
 
