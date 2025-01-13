@@ -8,6 +8,8 @@ public interface IChatMessage<TFunctionCall, TFunctionResult> where TFunctionCal
 
     public string? Content { get; set; }
 
+    public string? Image { get; set; }
+
     public ICollection<TFunctionCall> FunctionCalls { get; set; }
 
     public TFunctionResult? FunctionResult { get; set; }
