@@ -26,9 +26,9 @@ public interface IDatabaseManager
 
     public IAsyncEnumerable<IDatabaseItem> GetAllItemsAsync(IDatabase database);
 
-    public IAsyncEnumerable<IDatabaseItem> SearchItemsAsync(IDatabase database, string? query = null, int count = 10, IDatabaseSorting? sorting = null, params IEnumerable<IDatabaseFilter> filters);
+    public IAsyncEnumerable<IDatabaseItem> SearchItemsAsync(IDatabase database, int count = 10, IDatabaseSorting? sorting = null, params IEnumerable<IDatabaseFilter> filters);
 
-    public Task<IDatabaseItem?> SearchItemAsync(IDatabase database, string? query = null, IDatabaseSorting? sorting = null, CancellationToken cancellationToken = default, params IEnumerable<IDatabaseFilter> filters);
+    public Task<IDatabaseItem?> SearchItemAsync(IDatabase database, IDatabaseSorting? sorting = null, CancellationToken cancellationToken = default, params IEnumerable<IDatabaseFilter> filters);
 
     public Task<IDatabaseItem?> FindItemByIdAsync(Guid id, CancellationToken cancellationToken = default);
 
