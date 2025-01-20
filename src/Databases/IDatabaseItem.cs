@@ -23,4 +23,6 @@ public interface IDatabaseItem
     public DateTimeOffset LastUpdateTime { get; }
 
     public DateTimeOffset? DeletionTime { get; }
+
+    public string? GetPropertyValue(string title);
 }
