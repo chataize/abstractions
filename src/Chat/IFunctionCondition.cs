@@ -13,8 +13,6 @@ public interface IFunctionCondition
 
     public string? IconUrl { get; }
 
-    public bool IsPrecondition { get; }
-
     public Delegate Callback { get; }
 
     public Func<IReadOnlyDictionary<string, JsonElement>, IReadOnlyCollection<ISetting>> SettingsCallback { get; }
