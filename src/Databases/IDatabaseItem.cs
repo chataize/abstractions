@@ -10,6 +10,8 @@ public interface IDatabaseItem
 
     public string Title { get; }
 
+    public string NormalizedTitle { get; }
+
     public string? Description { get; }
 
     public IReadOnlyDictionary<string, string?> Properties { get; }

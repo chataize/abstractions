@@ -6,6 +6,8 @@ public interface IDatabase
 
     public string Title { get; }
 
+    public string NormalizedTitle { get; }
+
     public string? Description { get; }
 
     public bool IsDeleted { get; }
