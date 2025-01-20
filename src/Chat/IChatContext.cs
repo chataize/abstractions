@@ -1,17 +1,12 @@
-using ChatAIze.Abstractions.Databases;
 using ChatAIze.Abstractions.Plugins;
 
 namespace ChatAIze.Abstractions.Chat;
 
-public interface IChatContext
+public interface IChatContext : IChatbotContext
 {
-    public IPluginSettings Settings { get; }
-
     public Guid ChatId { get; }
 
     public IUserContext User { get; }
-
-    public IDatabaseManager Databases { get; }
 
     public bool IsPreview { get; }
 
