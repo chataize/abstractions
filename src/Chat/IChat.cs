@@ -8,9 +8,9 @@ public interface IChat<TMessage, TFunctionCall, TFunctionResult> where TMessage 
 
     public ValueTask<TMessage> FromSystemAsync(string message, PinLocation pinLocation = PinLocation.None);
 
-    public ValueTask<TMessage> FromUserAsync(string message, PinLocation pinLocation = PinLocation.None);
+    public ValueTask<TMessage> FromUserAsync(string message, PinLocation pinLocation = PinLocation.None, params ICollection<string> imageUrls);
 
-    public ValueTask<TMessage> FromUserAsync(string author, string message, PinLocation pinLocation = PinLocation.None);
+    public ValueTask<TMessage> FromUserAsync(string author, string message, PinLocation pinLocation = PinLocation.None, params ICollection<string> imageUrls);
 
     public ValueTask<TMessage> FromChatbotAsync(string message, PinLocation pinLocation = PinLocation.None);
 
