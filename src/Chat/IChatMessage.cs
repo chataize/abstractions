@@ -8,7 +8,7 @@ public interface IChatMessage<TFunctionCall, TFunctionResult> where TFunctionCal
 
     public string? Content { get; set; }
 
-    public string? Image { get; set; }
+    public ICollection<string> ImageUrls { get; set; }
 
     public ICollection<TFunctionCall> FunctionCalls { get; set; }
 
