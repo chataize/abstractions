@@ -19,6 +19,7 @@
     <TargetFramework>net9.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <Description>
       Abstract classes, interfaces, and enums shared across ChatAIze projects for better
       interoperability.
