@@ -35,9 +35,11 @@ public interface IFunctionContext : IConditionContext
     public ValueTask<string?> GetDocumentContentAsync(string title, CancellationToken cancellationToken = default);
 
     /// <summary>
-    /// Sets the AI provider and model to use for upcoming chatbot responses.
+    /// Sets how much reasoning effort the assistant should apply when generating responses.
+    /// Higher levels may produce deeper analysis but can increase processing time and resource usage.
     /// </summary>
-    public void SetLanguageModel(IntelligenceProvider provider, string model);
+    /// <param name="level">The desired reasoning-effort level.</param>
+    public void SetIntelligenceLevel(IntelligenceLevel level);
 
     /// <summary>
     /// Updates the current execution status and optional progress value.
