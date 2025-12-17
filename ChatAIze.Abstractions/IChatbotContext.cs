@@ -6,17 +6,24 @@ using Microsoft.Extensions.Logging;
 namespace ChatAIze.Abstractions;
 
 /// <summary>
-/// Represents the context in which a chatbot operates, including plugin settings and database access.
+/// Provides host services and configuration access outside of a specific chat conversation.
 /// </summary>
+/// <remarks>
+/// This context is commonly passed to plugin callbacks that run in the dashboard (for example plugin settings/actions/conditions discovery),
+/// where there may not be a concrete end-user chat session.
+/// <para>
+/// For per-conversation context (chat id, user, preview flags) use <see cref="ChatAIze.Abstractions.Chat.IChatContext"/>.
+/// </para>
+/// </remarks>
 public interface IChatbotContext
 {
     /// <summary>
-    /// Gets the plugin settings associated with the chatbot context.
+    /// Gets the host-managed plugin settings store.
     /// </summary>
     public IPluginSettings Settings { get; }
 
     /// <summary>
-    /// Gets the database manager used for interacting with data sources.
+    /// Gets the database manager used for interacting with custom databases.
     /// </summary>
     public IDatabaseManager Databases { get; }
 

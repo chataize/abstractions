@@ -1,8 +1,16 @@
 namespace ChatAIze.Abstractions.Retrieval;
 
 /// <summary>
-/// Represents the result of a knowledge retrieval operation, including matching items and their source identifiers.
+/// Represents the result of a retrieval operation (semantic search).
 /// </summary>
+/// <remarks>
+/// Hosts typically return both:
+/// <list type="bullet">
+/// <item><description><see cref="Items"/>: the human-/model-readable matches,</description></item>
+/// <item><description><see cref="ChunkIds"/>: internal identifiers for the content chunks used to build the result.</description></item>
+/// </list>
+/// Chunk ids can be fed back into subsequent searches to avoid repeating the same sources.
+/// </remarks>
 public interface IRetrievalResult
 {
     /// <summary>
@@ -11,7 +19,7 @@ public interface IRetrievalResult
     public IReadOnlyList<IRetrievalItem> Items { get; }
 
     /// <summary>
-    /// Gets the identifiers of the content chunks from which the retrieved items originated.
+    /// Gets identifiers of content chunks that contributed to this result.
     /// </summary>
     public IReadOnlyCollection<Guid> ChunkIds { get; }
 }

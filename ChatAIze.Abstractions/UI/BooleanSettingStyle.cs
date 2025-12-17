@@ -1,17 +1,17 @@
 namespace ChatAIze.Abstractions.UI;
 
 /// <summary>
-/// Specifies how a boolean setting should be presented in the user interface.
+/// Specifies how a boolean setting should be rendered.
 /// </summary>
 public enum BooleanSettingStyle
 {
     /// <summary>
-    /// Displays the setting as a toggle switch, typically used for on/off states.
+    /// Render as a toggle switch.
     /// </summary>
     ToggleSwitch,
 
     /// <summary>
-    /// Displays the setting as a checkbox, typically used for enable/disable options.
+    /// Render as a checkbox.
     /// </summary>
     CheckBox
 }

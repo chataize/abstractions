@@ -3,12 +3,15 @@ using ChatAIze.Abstractions.UI;
 namespace ChatAIze.Abstractions.Settings;
 
 /// <summary>
-/// Represents a boolean (true/false) setting that can be displayed and configured in the user interface.
+/// Represents a boolean (true/false) toggle in a settings UI or dynamic form.
 /// </summary>
+/// <remarks>
+/// Values are typically stored by the host as JSON (a boolean) under <see cref="ISetting.Id"/>.
+/// </remarks>
 public interface IBooleanSetting : ISetting, IDefaultValueObject
 {
     /// <summary>
-    /// Gets the display title of the setting, shown in the user interface.
+    /// Gets the display title/label.
     /// </summary>
     public string? Title { get; }
 
@@ -28,12 +31,15 @@ public interface IBooleanSetting : ISetting, IDefaultValueObject
     public bool DefaultValue { get; }
 
     /// <summary>
-    /// Gets a flag indicating whether the setting should be displayed in a compact form (without a label).
+    /// Gets a flag indicating whether the UI should render the control in a compact layout.
     /// </summary>
+    /// <remarks>
+    /// Rendering is host-dependent. In ChatAIze.Chatbot this influences spacing/border rendering.
+    /// </remarks>
     public bool IsCompact { get; }
 
     /// <summary>
-    /// Gets a flag indicating whether the setting is disabled and not editable by the user.
+    /// Gets a flag indicating whether the input is disabled.
     /// </summary>
     public bool IsDisabled { get; }
 }

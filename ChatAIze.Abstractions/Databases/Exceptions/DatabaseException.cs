@@ -1,8 +1,11 @@
 namespace ChatAIze.Abstractions.Databases.Exceptions;
 
 /// <summary>
-/// Represents errors that occur during database operations within the chatbot system.
+/// Base exception type for errors raised by <see cref="ChatAIze.Abstractions.Databases.IDatabaseManager"/> implementations.
 /// </summary>
+/// <remarks>
+/// Hosts throw these exceptions to indicate validation and persistence errors when managing custom databases.
+/// </remarks>
 public class DatabaseException : Exception
 {
     /// <summary>

@@ -1,16 +1,20 @@
 namespace ChatAIze.Abstractions.Plugins;
 
 /// <summary>
-/// Represents an asynchronous loader for a chatbot plugin.
+/// Defines an asynchronous entry point for constructing a plugin instance.
 /// </summary>
 /// <remarks>
-/// When a plugin DLL is loaded, the chatbot gives priority to <see cref="IAsyncPluginLoader"/> over <see cref="IPluginLoader"/>.
-/// If no loader is found, it falls back to automatically instantiating the plugin class.
+/// When a plugin assembly is loaded, ChatAIze.Chatbot prefers this interface over <see cref="IPluginLoader"/> so you can
+/// perform asynchronous initialization (warm-up, schema discovery, etc.).
+/// <para>
+/// Important: the default host creates the loader via <see cref="Activator.CreateInstance(Type)"/>, so the loader type must have
+/// a public parameterless constructor and cannot rely on dependency injection.
+/// </para>
 /// </remarks>
 public interface IAsyncPluginLoader
 {
     /// <summary>
-    /// Asynchronously loads and returns an instance of a chatbot plugin.
+    /// Asynchronously constructs and returns a fully initialized plugin instance.
     /// </summary>
     /// <param name="cancellationToken">A token to cancel the asynchronous load operation.</param>
     public ValueTask<IChatbotPlugin> LoadAsync(CancellationToken cancellationToken = default);

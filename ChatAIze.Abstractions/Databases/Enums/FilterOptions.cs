@@ -1,8 +1,11 @@
 namespace ChatAIze.Abstractions.Databases.Enums;
 
 /// <summary>
-/// Specifies additional options that affect how a database filter is applied.
+/// Additional options that control how a database filter compares values.
 /// </summary>
+/// <remarks>
+/// Not every host supports every option. ChatAIze.Chatbot currently supports case-insensitive and diacritic-insensitive comparisons.
+/// </remarks>
 [Flags]
 public enum FilterOptions
 {

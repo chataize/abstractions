@@ -1,32 +1,42 @@
 namespace ChatAIze.Abstractions.Retrieval;
 
 /// <summary>
-/// Represents an item retrieved from a knowledge base or document source.
+/// Represents a single piece of retrieved knowledge (a "hit") returned by semantic search.
 /// </summary>
+/// <remarks>
+/// Retrieval items are used to provide grounding context to the language model and/or to show citations to users.
+/// The <see cref="Content"/> may be a snippet rather than the full underlying document.
+/// </remarks>
 public interface IRetrievalItem
 {
     /// <summary>
-    /// Gets the title of the retrieved item.
+    /// Gets the display title of the item (for example: document title).
     /// </summary>
     public string Title { get; }
 
     /// <summary>
-    /// Gets the optional description of the item, typically used to summarize its content.
+    /// Gets an optional short description or summary.
     /// </summary>
     public string? Description { get; }
 
     /// <summary>
-    /// Gets the full content of the item, if available.
+    /// Gets the content/snippet used as retrieval context.
     /// </summary>
+    /// <remarks>
+    /// This may be truncated. Hosts usually provide a separate API to fetch full document content by id/title.
+    /// </remarks>
     public string? Content { get; }
 
     /// <summary>
-    /// Gets the folder or category the item belongs to, if applicable.
+    /// Gets the folder/category the item belongs to (if any).
     /// </summary>
     public string? Folder { get; }
 
     /// <summary>
-    /// Gets the source URL of the item, if it originated from an external system or document.
+    /// Gets an optional source URL for the item.
     /// </summary>
+    /// <remarks>
+    /// Hosts may surface this to users as a citation/link.
+    /// </remarks>
     public string? SourceUrl { get; }
 }

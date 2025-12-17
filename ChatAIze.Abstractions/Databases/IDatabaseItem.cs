@@ -1,8 +1,12 @@
 namespace ChatAIze.Abstractions.Databases;
 
 /// <summary>
-/// Represents an individual item stored in a database, including custom properties, metadata, and lifecycle tracking.
+/// Represents a single record/item inside a custom database.
 /// </summary>
+/// <remarks>
+/// Items have a display <see cref="Title"/> and an open-ended set of string properties (<see cref="Properties"/>).
+/// Hosts often normalize titles and property keys to make lookups tolerant of casing and punctuation.
+/// </remarks>
 public interface IDatabaseItem
 {
     /// <summary>
@@ -26,7 +30,7 @@ public interface IDatabaseItem
     public string Title { get; }
 
     /// <summary>
-    /// Gets a normalized version of the item's title, typically used for indexing or comparison.
+    /// Gets a normalized version of <see cref="Title"/> used for indexing or comparison.
     /// </summary>
     public string NormalizedTitle { get; }
 
@@ -36,9 +40,12 @@ public interface IDatabaseItem
     public string? Description { get; }
 
     /// <summary>
-    /// Gets the dictionary of custom property values associated with this item.
-    /// The key is the property name, and the value is the corresponding value.
+    /// Gets the dictionary of custom property values for this item.
     /// </summary>
+    /// <remarks>
+    /// In ChatAIze.Chatbot the keys are typically normalized property identifiers (snake_case), not the original display titles.
+    /// Use <see cref="GetPropertyValue"/> when you want the host to normalize the lookup key for you.
+    /// </remarks>
     public IReadOnlyDictionary<string, string?> Properties { get; }
 
     /// <summary>
@@ -62,9 +69,12 @@ public interface IDatabaseItem
     public DateTimeOffset? DeletionTime { get; }
 
     /// <summary>
-    /// Retrieves the value of a custom property by its title.
+    /// Retrieves a property value by name/title.
     /// </summary>
     /// <param name="title">The name of the property to retrieve.</param>
     /// <returns>The property value if found; otherwise, <c>null</c>.</returns>
+    /// <remarks>
+    /// Hosts commonly normalize <paramref name="title"/> for comparison (for example snake_case, case-insensitive).
+    /// </remarks>
     public string? GetPropertyValue(string title);
 }

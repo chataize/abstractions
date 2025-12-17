@@ -1,12 +1,16 @@
 namespace ChatAIze.Abstractions.Settings;
 
 /// <summary>
-/// Represents a setting that allows the user to define a collection of key-value pairs, similar to a dictionary.
+/// Represents a setting that stores a string-to-string map (dictionary).
 /// </summary>
+/// <remarks>
+/// In ChatAIze.Chatbot this is rendered as a repeatable key/value editor. Values are typically stored as a JSON object under
+/// <see cref="ISetting.Id"/>.
+/// </remarks>
 public interface IMapSetting : ISetting, IDefaultValueObject
 {
     /// <summary>
-    /// Gets the display title of the setting, shown in the user interface.
+    /// Gets the display title/label.
     /// </summary>
     public string? Title { get; }
 
@@ -41,7 +45,7 @@ public interface IMapSetting : ISetting, IDefaultValueObject
     public int MaxValueLength { get; }
 
     /// <summary>
-    /// Gets a flag indicating whether the setting is disabled and cannot be edited by the user.
+    /// Gets a flag indicating whether the control is disabled.
     /// </summary>
     public bool IsDisabled { get; }
 }

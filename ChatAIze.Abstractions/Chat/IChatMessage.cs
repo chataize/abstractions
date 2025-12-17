@@ -1,8 +1,17 @@
 namespace ChatAIze.Abstractions.Chat;
 
 /// <summary>
-/// Represents a single message in a chat conversation, which may include content, images, a function call, or a function result.
+/// Represents a single entry in a chat transcript.
 /// </summary>
+/// <remarks>
+/// ChatAIze uses one message type to represent text turns, tool calls, and tool results:
+/// <list type="bullet">
+/// <item><description>Text messages usually have <see cref="Content"/> set and <see cref="FunctionCalls"/> empty.</description></item>
+/// <item><description>Tool call messages are typically <see cref="ChatRole.Chatbot"/> with one or more <see cref="FunctionCalls"/>.</description></item>
+/// <item><description>Tool result messages are typically <see cref="ChatRole.Function"/> with <see cref="FunctionResult"/> set.</description></item>
+/// </list>
+/// Hosts may also use <see cref="PinLocation"/> to influence which messages survive context trimming.
+/// </remarks>
 /// <typeparam name="TFunctionCall">The type representing a function call within the message.</typeparam>
 /// <typeparam name="TFunctionResult">The type representing the result of a function execution.</typeparam>
 public interface IChatMessage<TFunctionCall, TFunctionResult>
@@ -10,38 +19,46 @@ public interface IChatMessage<TFunctionCall, TFunctionResult>
     where TFunctionResult : IFunctionResult
 {
     /// <summary>
-    /// Gets or sets the role of the message sender (e.g., user, chatbot, system).
+    /// Gets or sets the role associated with this message.
     /// </summary>
     public ChatRole Role { get; set; }
 
     /// <summary>
-    /// Gets or sets the display name of the user who sent the message, if applicable.
+    /// Gets or sets an optional display name for the user (not a stable identifier).
     /// </summary>
     public string? UserName { get; set; }
 
     /// <summary>
-    /// Gets or sets the textual content of the message.
+    /// Gets or sets the text content.
     /// </summary>
+    /// <remarks>
+    /// For tool call/result messages this is often <see langword="null"/> and the structured fields are used instead.
+    /// </remarks>
     public string? Content { get; set; }
 
     /// <summary>
-    /// Gets or sets the collection of image URLs included with the message.
+    /// Gets or sets image URLs attached to the message (provider support varies).
     /// </summary>
     public ICollection<string> ImageUrls { get; set; }
 
     /// <summary>
-    /// Gets or sets the function calls associated with the message.
+    /// Gets or sets tool/function calls requested by the model.
     /// </summary>
+    /// <remarks>
+    /// This is typically populated on <see cref="ChatRole.Chatbot"/> messages when the model chooses to call a tool.
+    /// </remarks>
     public ICollection<TFunctionCall> FunctionCalls { get; set; }
 
     /// <summary>
-    /// Gets or sets the result of a function execution associated with the message.
+    /// Gets or sets the tool/function result returned back to the model.
     /// </summary>
     public TFunctionResult? FunctionResult { get; set; }
 
     /// <summary>
-    /// Gets or sets the pin location used to preserve the message when it exceeds the context length limit.
-    /// This has no visual effect for the user.
+    /// Gets or sets how this message should be treated during context trimming.
     /// </summary>
+    /// <remarks>
+    /// Pinning is used by hosts to build a provider prompt within a token budget and usually has no visual effect for the end user.
+    /// </remarks>
     public PinLocation PinLocation { get; set; }
 }

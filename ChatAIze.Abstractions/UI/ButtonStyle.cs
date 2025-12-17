@@ -1,47 +1,47 @@
 namespace ChatAIze.Abstractions.UI;
 
 /// <summary>
-/// Specifies the visual style to apply to a button in the user interface.
+/// Specifies the visual emphasis of a button in the UI.
 /// </summary>
 public enum ButtonStyle
 {
     /// <summary>
-    /// The default button style.
+    /// Default button style.
     /// </summary>
     Default,
 
     /// <summary>
-    /// A button with rounded corners for a softer visual appearance.
+    /// Rounded button variant.
     /// </summary>
     Rounded,
 
     /// <summary>
-    /// A minimal button with no border or background styling.
+    /// Minimal button with no border/background styling.
     /// </summary>
     Borderless,
 
     /// <summary>
-    /// A lightly styled button, typically used for secondary or low-emphasis actions.
+    /// Low-emphasis button.
     /// </summary>
     Light,
 
     /// <summary>
-    /// A primary button used for general main actions.
+    /// Primary call-to-action button.
     /// </summary>
     Primary,
 
     /// <summary>
-    /// A high-emphasis button used to highlight the most important or recommended action.
+    /// High-emphasis accent button.
     /// </summary>
     Accent,
 
     /// <summary>
-    /// A button that indicates a warning or potentially harmful action.
+    /// Warning/danger button for potentially harmful actions.
     /// </summary>
     Danger,
 
     /// <summary>
-    /// A strong warning button style used for destructive or irreversible actions.
+    /// Strong warning button for destructive or irreversible actions.
     /// </summary>
     Destructive
 }

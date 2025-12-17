@@ -1,7 +1,7 @@
 namespace ChatAIze.Abstractions.Databases.Enums;
 
 /// <summary>
-/// Specifies the direction in which data should be sorted.
+/// Specifies the direction used when sorting query results.
 /// </summary>
 public enum SortOrder
 {

@@ -1,8 +1,12 @@
 namespace ChatAIze.Abstractions.Chat;
 
 /// <summary>
-/// Represents a stored chat session that includes persistent identifiers and creation metadata.
+/// Represents a chat transcript that is persisted (for example in a database).
 /// </summary>
+/// <remarks>
+/// ChatAIze.Chatbot uses this shape for its stored chat entities. It extends <see cref="IChat{TMessage, TFunctionCall, TFunctionResult}"/>
+/// with identifiers and basic lifecycle metadata.
+/// </remarks>
 /// <typeparam name="TMessage">The type representing a chat message.</typeparam>
 /// <typeparam name="TFunctionCall">The type representing a function call.</typeparam>
 /// <typeparam name="TFunctionResult">The type representing a function result.</typeparam>
@@ -12,7 +16,7 @@ public interface IStoredChat<TMessage, TFunctionCall, TFunctionResult> : IChat<T
     where TFunctionResult : IFunctionResult
 {
     /// <summary>
-    /// Gets or sets the unique identifier of the chat session.
+    /// Gets or sets the unique identifier of the chat.
     /// </summary>
     public Guid Id { get; set; }
 
@@ -22,7 +26,7 @@ public interface IStoredChat<TMessage, TFunctionCall, TFunctionResult> : IChat<T
     public Guid UserId { get; set; }
 
     /// <summary>
-    /// Gets or sets the timestamp when the chat session was created.
+    /// Gets or sets the UTC timestamp when the chat was created.
     /// </summary>
     public DateTimeOffset CreationTime { get; set; }
 }

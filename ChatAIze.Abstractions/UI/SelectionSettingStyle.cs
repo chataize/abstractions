@@ -1,13 +1,17 @@
 namespace ChatAIze.Abstractions.UI;
 
 /// <summary>
-/// Specifies how a selection-based setting should be displayed in the user interface.
+/// Specifies how a single-choice selection setting should be rendered.
 /// </summary>
 public enum SelectionSettingStyle
 {
     /// <summary>
-    /// The style is automatically chosen based on context or available space.
+    /// The host chooses the most appropriate style.
     /// </summary>
+    /// <remarks>
+    /// ChatAIze.Chatbot uses simple heuristics (for example: segmented control for a few choices, radio buttons for a small list,
+    /// otherwise a drop-down).
+    /// </remarks>
     Automatic,
 
     /// <summary>

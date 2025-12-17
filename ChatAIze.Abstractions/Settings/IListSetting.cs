@@ -3,12 +3,16 @@ using ChatAIze.Abstractions.UI;
 namespace ChatAIze.Abstractions.Settings;
 
 /// <summary>
-/// Represents a setting that accepts a list of user-defined text values, with support for input constraints and customization.
+/// Represents a setting that stores a list of strings.
 /// </summary>
+/// <remarks>
+/// In ChatAIze.Chatbot this is rendered as a repeatable list editor. Values are typically stored as a JSON array of strings
+/// under <see cref="ISetting.Id"/>.
+/// </remarks>
 public interface IListSetting : ISetting, IDefaultValueObject
 {
     /// <summary>
-    /// Gets the display title of the setting, shown in the user interface.
+    /// Gets the display title/label.
     /// </summary>
     public string? Title { get; }
 
@@ -48,7 +52,7 @@ public interface IListSetting : ISetting, IDefaultValueObject
     public bool IsLowercase { get; }
 
     /// <summary>
-    /// Gets a flag indicating whether the setting is disabled and cannot be modified by the user.
+    /// Gets a flag indicating whether the control is disabled.
     /// </summary>
     public bool IsDisabled { get; }
 }

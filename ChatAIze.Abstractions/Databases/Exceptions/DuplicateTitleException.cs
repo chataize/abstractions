@@ -1,8 +1,12 @@
 namespace ChatAIze.Abstractions.Databases.Exceptions;
 
 /// <summary>
-/// Represents an error that occurs when attempting to create or rename a database with a title that already exists.
+/// Thrown when attempting to create or rename a database (or item) to a title that already exists.
 /// </summary>
+/// <remarks>
+/// Titles are typically compared using a normalized form (see <c>NormalizedTitle</c> on database/item types), so
+/// <c>"My Database"</c> and <c>"my_database"</c> may be considered duplicates by a host implementation.
+/// </remarks>
 public class DuplicateTitleException : DatabaseException
 {
     /// <summary>

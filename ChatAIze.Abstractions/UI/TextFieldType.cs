@@ -1,37 +1,40 @@
 namespace ChatAIze.Abstractions.UI;
 
 /// <summary>
-/// Specifies the expected input type for a text field in the user interface.
+/// Specifies the intended input type for a text field.
 /// </summary>
+/// <remarks>
+/// Hosts may map this to HTML input types and/or validation behavior. Not all UIs enforce it.
+/// </remarks>
 public enum TextFieldType
 {
     /// <summary>
-    /// A standard single-line text field with no specific formatting.
+    /// Plain text input.
     /// </summary>
     Default,
 
     /// <summary>
-    /// A text field intended for search input.
+    /// Search input.
     /// </summary>
     Search,
 
     /// <summary>
-    /// A text field intended for URL input.
+    /// URL input.
     /// </summary>
     URL,
 
     /// <summary>
-    /// A text field intended for email address input.
+    /// Email input.
     /// </summary>
     Email,
 
     /// <summary>
-    /// A text field intended for phone number input.
+    /// Phone input.
     /// </summary>
     Phone,
 
     /// <summary>
-    /// A text field intended for password input. Characters may be masked.
+    /// Password input (characters may be masked).
     /// </summary>
     Password
 }

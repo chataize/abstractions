@@ -1,12 +1,15 @@
 namespace ChatAIze.Abstractions.Settings;
 
 /// <summary>
-/// Represents a decimal (floating-point) setting that supports optional range limits and slider visualization in the UI.
+/// Represents a floating-point slider setting in a settings UI or dynamic form.
 /// </summary>
+/// <remarks>
+/// Values are typically stored by the host as JSON (a number) under <see cref="ISetting.Id"/>.
+/// </remarks>
 public interface IDecimalSetting : ISetting, IDefaultValueObject
 {
     /// <summary>
-    /// Gets the display title of the setting, shown in the user interface.
+    /// Gets the display title/label.
     /// </summary>
     public string? Title { get; }
 
@@ -59,7 +62,7 @@ public interface IDecimalSetting : ISetting, IDefaultValueObject
     public string? MaxValueLabel { get; }
 
     /// <summary>
-    /// Gets a flag indicating whether the setting is disabled and not editable by the user.
+    /// Gets a flag indicating whether the input is disabled.
     /// </summary>
     public bool IsDisabled { get; }
 }

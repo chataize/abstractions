@@ -6,13 +6,16 @@ namespace ChatAIze.Abstractions.Settings;
 public interface ISelectionChoice
 {
     /// <summary>
-    /// Gets the display title of the choice, shown in the user interface.
+    /// Gets the display title shown to the user.
     /// </summary>
     public string? Title { get; }
 
     /// <summary>
-    /// Gets the value associated with the choice.
+    /// Gets the stored value associated with the choice.
     /// </summary>
+    /// <remarks>
+    /// This is the value persisted by the host and returned in settings dictionaries. Keep it stable across versions.
+    /// </remarks>
     public string Value { get; }
 
     /// <summary>

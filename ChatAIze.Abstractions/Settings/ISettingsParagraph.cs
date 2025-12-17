@@ -1,15 +1,15 @@
 namespace ChatAIze.Abstractions.Settings;
 
 /// <summary>
-/// Represents a static paragraph of text rendered in the settings interface.
+/// Represents a static block of text in a settings UI.
 /// </summary>
 /// <remarks>
-/// This element is used for informational purposes only and does not represent an editable setting.
+/// This element is informational only and does not produce a stored value.
 /// </remarks>
 public interface ISettingsParagraph : ISetting
 {
     /// <summary>
-    /// Gets the content of the paragraph to be displayed in the settings UI.
+    /// Gets the paragraph text to render.
     /// </summary>
     public string? Content { get; }
 }

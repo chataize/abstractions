@@ -3,12 +3,15 @@ using ChatAIze.Abstractions.UI;
 namespace ChatAIze.Abstractions.Settings;
 
 /// <summary>
-/// Represents an integer-based setting with optional UI styling, value range, and slider configuration.
+/// Represents an integer input field (stepper or slider) in a settings UI or dynamic form.
 /// </summary>
+/// <remarks>
+/// Values are typically stored by the host as JSON (a number) under <see cref="ISetting.Id"/>.
+/// </remarks>
 public interface IIntegerSetting : ISetting, IDefaultValueObject
 {
     /// <summary>
-    /// Gets the display title of the setting, shown in the user interface.
+    /// Gets the display title/label.
     /// </summary>
     public string? Title { get; }
 
@@ -38,8 +41,11 @@ public interface IIntegerSetting : ISetting, IDefaultValueObject
     public int MaxValue { get; }
 
     /// <summary>
-    /// Gets the value by which the slider or stepper increments or decrements.
+    /// Gets the increment/decrement step used by the UI.
     /// </summary>
+    /// <remarks>
+    /// Hosts may clamp or replace invalid values (for example a non-positive step).
+    /// </remarks>
     public int Step { get; }
 
     /// <summary>
@@ -71,7 +77,7 @@ public interface IIntegerSetting : ISetting, IDefaultValueObject
     public string? MaxValueLabel { get; }
 
     /// <summary>
-    /// Gets a flag indicating whether the setting is disabled and not editable by the user.
+    /// Gets a flag indicating whether the input is disabled.
     /// </summary>
     public bool IsDisabled { get; }
 }

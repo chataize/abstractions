@@ -1,8 +1,11 @@
 namespace ChatAIze.Abstractions.Databases.Exceptions;
 
 /// <summary>
-/// Represents an error that occurs when a database property is invalid or cannot be processed.
+/// Thrown when a database item property is invalid or cannot be processed.
 /// </summary>
+/// <remarks>
+/// For example: invalid property names, values that cannot be parsed for numeric comparisons, or other host-specific constraints.
+/// </remarks>
 public class PropertyException : DatabaseException
 {
     /// <summary>

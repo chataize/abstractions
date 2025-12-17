@@ -1,22 +1,22 @@
 namespace ChatAIze.Abstractions.UI;
 
 /// <summary>
-/// Specifies how a date and/or time setting should be displayed in the user interface.
+/// Specifies which date/time controls should be shown for a date-time setting.
 /// </summary>
 public enum DateTimeSettingStyle
 {
     /// <summary>
-    /// Displays both the date and time selection controls.
+    /// Show both date and time pickers.
     /// </summary>
     DateTime,
 
     /// <summary>
-    /// Displays only the date selection control.
+    /// Show only a date picker.
     /// </summary>
     DateOnly,
 
     /// <summary>
-    /// Displays only the time selection control.
+    /// Show only a time picker.
     /// </summary>
     TimeOnly
 }

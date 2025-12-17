@@ -1,8 +1,19 @@
 namespace ChatAIze.Abstractions;
 
 /// <summary>
-/// Specifies the language to be used for translation or localization purposes within the chatbot system.
+/// Represents a language used for translation, localization, and content filtering in ChatAIze.
 /// </summary>
+/// <remarks>
+/// This enum is used throughout ChatAIze.Chatbot for:
+/// <list type="bullet">
+/// <item><description>user language preference (<c>IUserContext.Language</c>),</description></item>
+/// <item><description>document/prompt language selection and filtering,</description></item>
+/// <item><description>UI language pickers.</description></item>
+/// </list>
+/// <para>
+/// It is not an ISO/BCP-47 code list. Hosts typically provide mapping utilities from system/browser locale codes to these values.
+/// </para>
+/// </remarks>
 public enum TranslationLanguage
 {
     /// <summary>

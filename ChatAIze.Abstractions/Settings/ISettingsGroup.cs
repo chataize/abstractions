@@ -1,25 +1,28 @@
 namespace ChatAIze.Abstractions.Settings;
 
 /// <summary>
-/// Represents a logical subgroup of settings within a section, typically used for organizing related options under a secondary heading.
+/// Represents a nested grouping node under a section.
 /// </summary>
 /// <remarks>
-/// Visually, a <see cref="ISettingsGroup"/> is displayed like a level-two heading (e.g., H2), nested under a higher-level section heading.
+/// ChatAIze.Chatbot renders groups as subheaders and then renders <see cref="Settings"/> underneath.
 /// </remarks>
 public interface ISettingsGroup : ISetting, ISettingsContainer
 {
     /// <summary>
-    /// Gets the display title of the group, shown as a subheading in the user interface.
+    /// Gets the display title of the group.
     /// </summary>
     public string? Title { get; }
 
     /// <summary>
-    /// Gets the optional description of the group, providing context or instructions for the grouped settings.
+    /// Gets an optional description shown under the title.
     /// </summary>
     public string? Description { get; }
 
     /// <summary>
-    /// Gets a flag indicating whether all settings in the group are disabled and not editable by the user.
+    /// Gets a flag indicating whether the group (and typically its children) should be treated as disabled.
     /// </summary>
+    /// <remarks>
+    /// Not all hosts enforce this automatically; individual settings also carry their own <c>IsDisabled</c> flags.
+    /// </remarks>
     public bool IsDisabled { get; }
 }

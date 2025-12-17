@@ -1,16 +1,27 @@
 namespace ChatAIze.Abstractions.Plugins;
 
 /// <summary>
-/// Represents a synchronous loader for a chatbot plugin.
+/// Defines a synchronous entry point for constructing a plugin instance.
 /// </summary>
 /// <remarks>
-/// When a plugin DLL is loaded, the chatbot will look for an implementation of <see cref="IAsyncPluginLoader"/> first,
-/// then <see cref="IPluginLoader"/>. If neither is found, it attempts to automatically construct the plugin class.
+/// ChatAIze.Chatbot discovers plugin loaders via reflection when a plugin assembly is loaded.
+/// <para>
+/// Load order:
+/// <list type="number">
+/// <item><description>an implementation of <see cref="IAsyncPluginLoader"/></description></item>
+/// <item><description>otherwise an implementation of <see cref="IPluginLoader"/></description></item>
+/// <item><description>otherwise the first concrete <see cref="IChatbotPlugin"/> type in the assembly</description></item>
+/// </list>
+/// </para>
+/// <para>
+/// Important: the default host uses <see cref="Activator.CreateInstance(Type)"/> to create the loader, so the loader type
+/// must have a public parameterless constructor and cannot rely on dependency injection.
+/// </para>
 /// </remarks>
 public interface IPluginLoader
 {
     /// <summary>
-    /// Loads and returns an instance of a chatbot plugin.
+    /// Constructs and returns a fully initialized plugin instance.
     /// </summary>
     public IChatbotPlugin Load();
 }

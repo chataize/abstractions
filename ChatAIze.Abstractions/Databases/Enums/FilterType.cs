@@ -1,8 +1,15 @@
 namespace ChatAIze.Abstractions.Databases.Enums;
 
 /// <summary>
-/// Specifies the type of comparison to apply in a database filter.
+/// Specifies the comparison operator used in a database filter.
 /// </summary>
+/// <remarks>
+/// Database properties are stored as strings. Hosts may:
+/// <list type="bullet">
+/// <item><description>treat empty values specially (exists/missing),</description></item>
+/// <item><description>parse numeric/date values for ordering comparisons (<see cref="GreaterThan"/>, <see cref="LessThan"/>, etc.).</description></item>
+/// </list>
+/// </remarks>
 public enum FilterType
 {
     /// <summary>

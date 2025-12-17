@@ -1,17 +1,17 @@
 namespace ChatAIze.Abstractions.UI;
 
 /// <summary>
-/// Specifies how an integer setting should be displayed in the user interface.
+/// Specifies how an integer setting should be rendered.
 /// </summary>
 public enum IntegerSettingStyle
 {
     /// <summary>
-    /// Displays the setting as a stepper control, allowing the user to increment or decrement the value.
+    /// Render as a stepper control.
     /// </summary>
     Stepper,
 
     /// <summary>
-    /// Displays the setting as a slider, allowing the user to select a value within a defined range.
+    /// Render as a slider.
     /// </summary>
     Slider
 }

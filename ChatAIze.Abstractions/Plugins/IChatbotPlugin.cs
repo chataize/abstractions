@@ -4,22 +4,32 @@ using ChatAIze.Abstractions.Settings;
 namespace ChatAIze.Abstractions.Plugins;
 
 /// <summary>
-/// Represents a chatbot plugin that provides settings, functions, actions, and conditions to extend chatbot capabilities.
+/// Represents a ChatAIze plugin that can contribute settings, tool functions, workflow actions, and conditions.
 /// </summary>
 /// <remarks>
-/// When a plugin DLL is loaded, the chatbot attempts to discover and instantiate the plugin using the following order:
+/// When a plugin assembly is loaded, ChatAIze.Chatbot attempts to discover and instantiate it using the following order:
 /// <list type="number">
 ///   <item><description>If a class implementing <see cref="IAsyncPluginLoader"/> is found, its <c>LoadAsync</c> method is called.</description></item>
-///   <item><description>If not, but a class implementing <see cref="IPluginLoader"/> exists, its <c>Load</c> method is used.</description></item>
-///   <item><description>If no loader is present, the chatbot attempts to automatically construct the plugin class directly.</description></item>
+///   <item><description>Otherwise, if a class implementing <see cref="IPluginLoader"/> is found, its <c>Load</c> method is called.</description></item>
+///   <item><description>Otherwise, the first concrete <see cref="IChatbotPlugin"/> type in the assembly is constructed via <see cref="Activator.CreateInstance(Type)"/>.</description></item>
 /// </list>
-/// This allows for dynamic plugin initialization and customization at load time if needed.
+/// <para>
+/// Important:
+/// <list type="bullet">
+/// <item><description>Plugin types must have a public parameterless constructor in the default host.</description></item>
+/// <item><description><see cref="Id"/> must be non-empty and <see cref="Version"/> must be provided, otherwise the host may reject the plugin.</description></item>
+/// <item><description>Plugins may be unloaded/reloaded; avoid relying on static global state.</description></item>
+/// </list>
+/// </para>
 /// </remarks>
 public interface IChatbotPlugin
 {
     /// <summary>
     /// Gets the unique identifier of the plugin.
     /// </summary>
+    /// <remarks>
+    /// This id is used as the stable key in the dashboard and should not change across versions.
+    /// </remarks>
     public string Id { get; }
 
     /// <summary>
@@ -48,8 +58,11 @@ public interface IChatbotPlugin
     public string? Author { get; }
 
     /// <summary>
-    /// Gets the version number of the plugin.
+    /// Gets the semantic version of the plugin.
     /// </summary>
+    /// <remarks>
+    /// ChatAIze.Chatbot currently requires a version for loaded plugins.
+    /// </remarks>
     public Version Version { get; }
 
     /// <summary>
@@ -63,34 +76,41 @@ public interface IChatbotPlugin
     public DateTimeOffset? LastUpdateTime { get; }
 
     /// <summary>
-    /// Gets a callback that returns the settings for the plugin.
+    /// Gets a callback that returns settings for the plugin.
     /// </summary>
     /// <remarks>
-    /// Used by the chatbot dashboard to dynamically render the plugin's settings UI.
+    /// Used by the dashboard to dynamically render the plugin's settings UI.
+    /// <para>
+    /// The <see cref="ISetting.Id"/> values you return typically become keys in <see cref="IPluginSettings"/> and are used to persist
+    /// configuration values.
+    /// </para>
     /// </remarks>
     public Func<IChatbotContext, ValueTask<IReadOnlyCollection<ISetting>>> SettingsCallback { get; }
 
     /// <summary>
-    /// Gets a callback that returns the list of functions provided by the plugin.
+    /// Gets a callback that returns tool functions provided by the plugin.
     /// </summary>
     /// <remarks>
-    /// Called by the chatbot to retrieve callable functions exposed by the plugin.
+    /// These functions are exposed to the language model via ChatAIze.GenerativeCS and can be called on-demand during a conversation.
+    /// <para>
+    /// Function names should be globally unique across all loaded plugins to avoid ambiguity.
+    /// </para>
     /// </remarks>
     public Func<IChatContext, ValueTask<IReadOnlyCollection<IChatFunction>>> FunctionsCallback { get; }
 
     /// <summary>
-    /// Gets a callback that returns the list of actions provided by the plugin.
+    /// Gets a callback that returns workflow actions provided by the plugin.
     /// </summary>
     /// <remarks>
-    /// Called by the function builder UI to populate the list of available plugin actions.
+    /// Called by the function builder UI to populate the list of available actions that administrators can use in workflows.
     /// </remarks>
     public Func<IChatbotContext, ValueTask<IReadOnlyCollection<IFunctionAction>>> ActionsCallback { get; }
 
     /// <summary>
-    /// Gets a callback that returns the list of conditions provided by the plugin.
+    /// Gets a callback that returns workflow conditions provided by the plugin.
     /// </summary>
     /// <remarks>
-    /// Called by the function builder UI to populate the list of available plugin conditions.
+    /// Called by the function builder UI to populate the list of available preconditions for workflows.
     /// </remarks>
     public Func<IChatbotContext, ValueTask<IReadOnlyCollection<IFunctionCondition>>> ConditionsCallback { get; }
 }

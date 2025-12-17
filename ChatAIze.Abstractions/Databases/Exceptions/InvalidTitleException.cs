@@ -1,8 +1,11 @@
 namespace ChatAIze.Abstractions.Databases.Exceptions;
 
 /// <summary>
-/// Represents an error that occurs when a database title is invalid or does not meet required criteria.
+/// Thrown when a database or item title is invalid for the host implementation.
 /// </summary>
+/// <remarks>
+/// Hosts may impose length/character constraints and normalize titles for indexing.
+/// </remarks>
 public class InvalidTitleException : DatabaseException
 {
     /// <summary>

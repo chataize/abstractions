@@ -3,12 +3,15 @@ using ChatAIze.Abstractions.UI;
 namespace ChatAIze.Abstractions.Settings;
 
 /// <summary>
-/// Represents a setting that allows the user to select one value from a predefined list of choices.
+/// Represents a single-choice selection control (dropdown / radio / segmented).
 /// </summary>
+/// <remarks>
+/// Values are typically stored by the host as JSON (a string) under <see cref="ISetting.Id"/>.
+/// </remarks>
 public interface ISelectionSetting : ISetting, IDefaultValueObject
 {
     /// <summary>
-    /// Gets the display title of the setting, shown in the user interface.
+    /// Gets the display title/label.
     /// </summary>
     public string? Title { get; }
 
@@ -28,17 +31,20 @@ public interface ISelectionSetting : ISetting, IDefaultValueObject
     public string? DefaultValue { get; }
 
     /// <summary>
-    /// Gets a flag indicating whether the setting should be displayed in a compact form (without a label).
+    /// Gets a flag indicating whether the UI should render the control in a compact layout.
     /// </summary>
+    /// <remarks>
+    /// Rendering is host-dependent. In ChatAIze.Chatbot this influences spacing/border rendering.
+    /// </remarks>
     public bool IsCompact { get; }
 
     /// <summary>
-    /// Gets a flag indicating whether the setting is disabled and not editable by the user.
+    /// Gets a flag indicating whether the control is disabled.
     /// </summary>
     public bool IsDisabled { get; }
 
     /// <summary>
-    /// Gets the collection of available choices for the setting.
+    /// Gets the available choices.
     /// </summary>
     public IReadOnlyCollection<ISelectionChoice> Choices { get; }
 }

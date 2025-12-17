@@ -1,8 +1,11 @@
 namespace ChatAIze.Abstractions.Settings;
 
 /// <summary>
-/// Represents a container that holds a collection of settings.
+/// Represents a node that contains child <see cref="ISetting"/> entries.
 /// </summary>
+/// <remarks>
+/// Containers are used to build nested settings UIs (sections/groups) as well as dynamic forms.
+/// </remarks>
 public interface ISettingsContainer
 {
     /// <summary>

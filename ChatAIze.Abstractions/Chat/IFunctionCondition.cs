@@ -4,13 +4,34 @@ using ChatAIze.Abstractions.Settings;
 namespace ChatAIze.Abstractions.Chat;
 
 /// <summary>
-/// Represents a condition that must be evaluated before a function can be executed.
+/// Describes a guard/condition that can be evaluated before running a function.
 /// </summary>
+/// <remarks>
+/// Conditions are evaluated before executing a workflow function. They are intended to be fast and side-effect free.
+/// <para>
+/// Callback conventions in the default ChatAIze host:
+/// <list type="bullet">
+/// <item><description>The first parameter can be an <see cref="IConditionContext"/>.</description></item>
+/// <item><description>A <see cref="CancellationToken"/> parameter is supported.</description></item>
+/// <item><description>Remaining parameters are bound by name from the settings dictionary (exact match or snake_case).</description></item>
+/// </list>
+/// </para>
+/// <para>
+/// Return conventions:
+/// <list type="bullet">
+/// <item><description>Return <see langword="true"/> to allow execution.</description></item>
+/// <item><description>Return <see langword="false"/> or a string/object to deny execution (the host may surface the string as a reason).</description></item>
+/// </list>
+/// </para>
+/// </remarks>
 public interface IFunctionCondition
 {
     /// <summary>
     /// Gets the unique identifier of the condition.
     /// </summary>
+    /// <remarks>
+    /// This id is used to persist placements in the dashboard and should be stable across versions.
+    /// </remarks>
     public string Id { get; }
 
     /// <summary>
@@ -29,15 +50,16 @@ public interface IFunctionCondition
     public string? IconUrl { get; }
 
     /// <summary>
-    /// Gets the delegate that contains the logic used to evaluate the condition.
+    /// Gets the delegate that evaluates the condition.
     /// </summary>
     public Delegate Callback { get; }
 
     /// <summary>
-    /// Gets a function that provides the configurable settings for this condition.
+    /// Gets a function that returns the settings used to configure this condition.
     /// </summary>
     /// <remarks>
-    /// This is used by the chatbot dashboard to render the appropriate UI for configuring the condition when it is added to a function.
+    /// This callback is used by the dashboard UI and may be called frequently. Keep it deterministic and fast.
+    /// The input dictionary contains the currently configured values for this placement (keyed by setting id).
     /// </remarks>
     public Func<IReadOnlyDictionary<string, JsonElement>, IReadOnlyCollection<ISetting>> SettingsCallback { get; }
 }

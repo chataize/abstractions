@@ -1,8 +1,15 @@
 namespace ChatAIze.Abstractions.Chat;
 
 /// <summary>
-/// Represents the outcome of an executed action within a chatbot function.
+/// Represents the recorded outcome of a single <see cref="IFunctionAction"/> execution.
 /// </summary>
+/// <remarks>
+/// In ChatAIze.Chatbot, a function run typically returns either:
+/// <list type="bullet">
+/// <item><description>a list of <see cref="IActionResult"/> entries (one per executed action), or</description></item>
+/// <item><description>an explicit function result set via <see cref="IActionContext.SetFunctionResult"/>.</description></item>
+/// </list>
+/// </remarks>
 public interface IActionResult
 {
     /// <summary>
@@ -11,12 +18,15 @@ public interface IActionResult
     public string Id { get; }
 
     /// <summary>
-    /// Gets the result value returned by the action.
+    /// Gets the result payload produced by the action.
     /// </summary>
+    /// <remarks>
+    /// This is often a <see cref="string"/> or a JSON-serializable object.
+    /// </remarks>
     public object Result { get; }
 
     /// <summary>
-    /// Gets a flag that indicates whether the action completed successfully.
+    /// Gets a flag indicating whether the action completed successfully.
     /// </summary>
     public bool IsSuccess { get; }
 }

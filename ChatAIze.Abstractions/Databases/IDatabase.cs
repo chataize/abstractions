@@ -1,8 +1,12 @@
 namespace ChatAIze.Abstractions.Databases;
 
 /// <summary>
-/// Represents a structured database used within the chatbot system, including metadata and lifecycle tracking.
+/// Represents a custom database managed by the host (for example via the ChatAIze dashboard).
 /// </summary>
+/// <remarks>
+/// Databases are used as lightweight structured storage for workflows and plugins (for example: "Products", "FAQ entries", "Contacts").
+/// Hosts typically normalize <see cref="Title"/> into <see cref="NormalizedTitle"/> for comparisons and lookups.
+/// </remarks>
 public interface IDatabase
 {
     /// <summary>
@@ -16,8 +20,11 @@ public interface IDatabase
     public string Title { get; }
 
     /// <summary>
-    /// Gets a normalized version of the database title, typically used for internal comparisons or indexing.
+    /// Gets a normalized version of <see cref="Title"/> used for comparisons and indexing.
     /// </summary>
+    /// <remarks>
+    /// In ChatAIze.Chatbot this is typically a snake_case, ASCII/diacritic-insensitive representation.
+    /// </remarks>
     public string NormalizedTitle { get; }
 
     /// <summary>
