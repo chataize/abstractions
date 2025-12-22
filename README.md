@@ -250,5 +250,10 @@ Tips:
 - `ChatAIze.GenerativeCS`: tool schema generation and provider integration.
 - `ChatAIze.Utilities`: argument binding helpers (`DelegateExtensions`) used by the host.
 
+## Links
+- GitHub: https://github.com/chataize/abstractions
+- Chataize organization: https://github.com/chataize
+- Website: https://www.chataize.com
+
 ## License
 GPL-3.0-or-later. See `LICENSE` for details.
